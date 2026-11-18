@@ -1,0 +1,300 @@
+
+/* ================================= */
+/* CONFIGURAÇÕES GERAIS */
+/* ================================= */
+
+.pagina-explorar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 40px 70px;
+}
+
+/* ================================= */
+/* APRESENTAÇÃO */
+/* ================================= */
+
+.introducao-explorar {
+    margin-bottom: 30px;
+}
+
+.introducao-explorar .subtitulo {
+    color: var(--caramelo);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.introducao-explorar h1 {
+    color: var(--texto);
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.introducao-explorar p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+}
+
+/* ================================= */
+/* PESQUISA */
+/* ================================= */
+
+.pesquisa-explorar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 15px 18px;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.pesquisa-explorar:focus-within {
+    border-color: var(--caramelo);
+    box-shadow: 0 0 0 3px rgba(185, 130, 80, 0.12);
+}
+
+.pesquisa-explorar i {
+    color: var(--texto-secundario);
+    width: 20px;
+}
+
+.pesquisa-explorar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.pesquisa-explorar input::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* ================================= */
+/* FILTROS */
+/* ================================= */
+
+.filtros-explorar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filtro-explorar {
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: 1px solid var(--borda);
+    background-color: var(--cartao);
+    color: var(--texto-secundario);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro-explorar:hover {
+    border-color: var(--caramelo);
+    color: var(--caramelo);
+}
+
+.filtro-explorar.ativo {
+    background-color: var(--marrom);
+    color: white;
+    border-color: var(--marrom);
+}
+
+/* ================================= */
+/* SEÇÕES */
+/* ================================= */
+
+.secao-explorar {
+    margin-bottom: 45px;
+}
+
+.titulo-secao-explorar {
+    margin-bottom: 20px;
+}
+
+.titulo-secao-explorar h2 {
+    color: var(--texto);
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.titulo-secao-explorar p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+/* ================================= */
+/* CATEGORIAS DE GÊNERO */
+/* ================================= */
+
+.categorias-genero {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 13px;
+}
+
+.categoria-genero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 17px 10px;
+    background-color: var(--cartao);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categoria-genero i {
+    width: 17px;
+    height: 17px;
+    color: var(--caramelo);
+}
+
+.categoria-genero:hover {
+    border-color: var(--caramelo);
+    transform: translateY(-3px);
+}
+
+.categoria-genero.ativo {
+    background-color: var(--marrom);
+    border-color: var(--marrom);
+    color: white;
+}
+
+.categoria-genero.ativo i {
+    color: white;
+}
+
+/* ================================= */
+/* GRADE DE HISTÓRIAS */
+/* ================================= */
+
+.grade-explorar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card-explorar {
+    min-width: 0;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card-explorar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(56, 39, 31, 0.10);
+}
+
+.card-explorar .capa {
+    width: 100%;
+    height: 230px;
+    border-radius: 0;
+    margin: 0;
+}
+
+.info-explorar {
+    padding: 16px;
+}
+
+.info-explorar .tipo {
+    color: var(--caramelo);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.info-explorar h3 {
+    color: var(--texto);
+    font-size: 16px;
+    margin: 7px 0 5px;
+}
+
+.info-explorar p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.genero-card {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(120, 128, 100, 0.13);
+    color: var(--verde);
+    font-size: 11px;
+}
+
+/* ================================= */
+/* MENSAGEM SEM RESULTADOS */
+/* ================================= */
+
+.mensagem-vazia-explorar {
+    display: none;
+    text-align: center;
+    color: var(--texto-secundario);
+    padding: 30px 10px;
+    font-size: 14px;
+}
+
+/* ================================= */
+/* RESPONSIVIDADE */
+/* ================================= */
+
+@media (max-width: 1000px) {
+    .categorias-genero {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grade-explorar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina-explorar {
+        padding: 30px 18px 50px;
+    }
+
+    .introducao-explorar h1 {
+        font-size: 27px;
+    }
+
+    .categorias-genero {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grade-explorar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card-explorar .capa {
+        height: 180px;
+    }
+
+    .info-explorar {
+        padding: 12px;
+    }
+
+    .info-explorar h3 {
+        font-size: 14px;
+    }
+}

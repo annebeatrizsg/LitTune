@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leitura | LitTune</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="pagina-leitura">
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo">LitTune</a>
+
+        <a href="index.html" class="voltar-leitura">
+            <i data-lucide="arrow-left"></i>
+            Voltar ao início
+        </a>
+
+        <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
+            <i data-lucide="moon" class="icone-tema"></i>
+        </button>
+    </header>
+
+    <main class="conteudo-leitura">
+
+        <section class="apresentacao-leitura">
+
+            <div id="capa-leitura" class="capa capa-livro capa-leitura">
+                <i data-lucide="book-open"></i>
+            </div>
+
+            <div class="informacoes-leitura">
+
+                <span id="tipo-leitura" class="subtitulo"></span>
+
+                <h1 id="titulo-leitura"></h1>
+
+                <p id="autor-leitura"></p>
+
+                <p id="descricao-leitura"></p>
+
+            </div>
+
+        </section>
+
+        <section class="dedicatoria">
+
+            <i data-lucide="heart"></i>
+
+            <h2>Uma dedicatória especial</h2>
+
+            <p id="texto-dedicatoria"></p>
+
+        </section>
+
+
+        <article class="capitulo">
+
+            <span class="subtitulo">SUA PRÓXIMA LEITURA</span>
+
+            <div class="seletor-capitulo">
+                <label for="capitulo-escolhido">Escolher capítulo:</label>
+
+                <select id="capitulo-escolhido">
+                </select>
+            </div>
+
+            <h2 id="titulo-capitulo">Capítulo 1</h2>
+
+            <div id="texto-historia" class="texto-historia"></div>
+
+            <div class="controles-capitulo">
+
+                <button id="capitulo-anterior" class="botao-capitulo">
+                    <i data-lucide="arrow-left"></i>
+                    Capítulo anterior
+                </button>
+
+                <button id="proximo-capitulo" class="botao-proximo">
+                    Próximo capítulo
+                    <i data-lucide="arrow-right"></i>
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="leitura.js"></script>
+
+</body>
+
+</html>

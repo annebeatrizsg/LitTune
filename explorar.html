@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar - LitTune</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="explorar.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+            <a href="index.html">
+                <i data-lucide="house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="ativo">
+                <i data-lucide="compass"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="index.html">
+                <i data-lucide="square-pen"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="index.html">
+                <i data-lucide="music"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="index.html">
+                <i data-lucide="messages-square"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="index.html">
+                <i data-lucide="user-round"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
+            <i data-lucide="moon"></i>
+        </button>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-explorar">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="introducao-explorar">
+            <span class="subtitulo">UM UNIVERSO DE HISTÓRIAS</span>
+
+            <h1>Explore novas histórias</h1>
+
+            <p>
+                Descubra livros, fanfics e novos mundos
+                esperando por você.
+            </p>
+        </section>
+
+        <!-- PESQUISA -->
+        <section class="pesquisa-explorar">
+
+            <i data-lucide="search"></i>
+
+            <input type="text" id="pesquisa-explorar" placeholder="Pesquise por título, autor ou gênero...">
+
+        </section>
+
+        <!-- FILTROS -->
+        <section class="filtros-explorar">
+
+            <button class="filtro-explorar ativo" data-filtro="ambos">
+                Todos
+            </button>
+
+            <button class="filtro-explorar" data-filtro="livro">
+                Livros
+            </button>
+
+            <button class="filtro-explorar" data-filtro="fanfic">
+                Fanfics
+            </button>
+
+        </section>
+
+        <!-- GÊNEROS -->
+        <section class="secao-explorar">
+
+            <div class="titulo-secao-explorar">
+                <h2>Explore por gênero</h2>
+                <p>Encontre histórias do seu interesse.</p>
+            </div>
+
+
+            <div class="categorias-genero">
+
+                <button class="categoria-genero" data-genero="romance">
+                    <i data-lucide="heart"></i>
+                    Romance
+                </button>
+
+                <button class="categoria-genero" data-genero="fantasia">
+                    <i data-lucide="wand-sparkles"></i>
+                    Fantasia
+                </button>
+
+                <button class="categoria-genero" data-genero="mistério">
+                    <i data-lucide="search"></i>
+                    Mistério
+                </button>
+
+                <button class="categoria-genero" data-genero="terror">
+                    <i data-lucide="ghost"></i>
+                    Terror
+                </button>
+
+                <button class="categoria-genero" data-genero="aventura">
+                    <i data-lucide="compass"></i>
+                    Aventura
+                </button>
+
+                <button class="categoria-genero" data-genero="drama">
+                    <i data-lucide="cloud-rain"></i>
+                    Drama
+                </button>
+
+            </div>
+
+
+        </section>
+
+        <!-- HISTÓRIAS -->
+        <section class="secao-explorar">
+
+            <div class="titulo-secao-explorar">
+                <h2>Histórias em alta</h2>
+                <p>Descubra histórias que estão chamando atenção.</p>
+            </div>
+
+            <div class="grade-explorar" id="lista-explorar">
+
+                <article class="card-explorar card-historia" data-type="livro" data-genero="romance">
+
+                    <div class="capa capa-romance"></div>
+
+                    <div class="info-explorar">
+                        <span class="tipo">LIVRO</span>
+                        <h3>Entre Páginas</h3>
+                        <p>Por: Ana Martins</p>
+                        <span class="genero-card">Romance</span>
+                    </div>
+
+                </article>
+
+                <article class="card-explorar card-historia" data-type="fanfic" data-genero="fantasia">
+
+                    <div class="capa capa-fantasia"></div>
+
+                    <div class="info-explorar">
+                        <span class="tipo">FANFIC</span>
+                        <h3>O Reino Esquecido</h3>
+                        <p>Por: Lucas Oliveira</p>
+                        <span class="genero-card">Fantasia</span>
+                    </div>
+
+                </article>
+
+                <article class="card-explorar card-historia" data-type="livro" data-genero="mistério">
+
+                    <div class="capa capa-misterio"></div>
+
+                    <div class="info-explorar">
+                        <span class="tipo">LIVRO</span>
+                        <h3>Segredos da Noite</h3>
+                        <p>Por: Clara Mendes</p>
+                        <span class="genero-card">Mistério</span>
+                    </div>
+
+                </article>
+
+                <article class="card-explorar card-historia" data-type="fanfic" data-genero="aventura">
+
+                    <div class="capa capa-aventura"></div>
+
+                    <div class="info-explorar">
+                        <span class="tipo">FANFIC</span>
+                        <h3>Além do Horizonte</h3>
+                        <p>Por: Júlia Costa</p>
+                        <span class="genero-card">Aventura</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="mensagem-vazia-explorar" class="mensagem-vazia-explorar">
+                Nenhuma história encontrada.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="explorar.js"></script>
+
+</body>
+
+</html>

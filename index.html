@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LitTune | Início</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="#inicio" class="logo">LitTune</a>
+
+        <nav class="menu">
+
+            <a href="#inicio" class="nav-link ativo" title="Início">
+                <i data-lucide="house" class="icone"></i>
+                <span class="texto">Início</span>
+            </a>
+
+            <a href="#explorar" class="nav-link" title="Explorar">
+                <i data-lucide="compass" class="icone"></i>
+                <span class="texto">Explorar</span>
+            </a>
+
+            <a href="#escrever" class="nav-link" title="Escrever">
+                <i data-lucide="square-pen" class="icone"></i>
+                <span class="texto">Escrever</span>
+            </a>
+
+            <a href="#musica" class="nav-link" title="Música">
+                <i data-lucide="music" class="icone"></i>
+                <span class="texto">Música</span>
+            </a>
+
+            <a href="#comunidade" class="nav-link" title="Comunidade">
+                <i data-lucide="messages-square" class="icone"></i>
+                <span class="texto">Comunidade</span>
+            </a>
+
+            <a href="#perfil" class="nav-link" title="Perfil">
+                <i data-lucide="user-round" class="icone"></i>
+                <span class="texto">Perfil</span>
+            </a>
+
+        </nav>
+
+        <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
+            <i data-lucide="moon" class="icone-tema"></i>
+        </button>
+
+    </header>
+
+
+    <main id="inicio">
+
+        <!-- BOAS-VINDAS -->
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <span class="subtitulo">SEU UNIVERSO LITERÁRIO</span>
+
+                <h1>Histórias que combinam com você.</h1>
+
+                <p>
+                    Leia, escreva e descubra novas histórias
+                    acompanhadas de música.
+                </p>
+
+                <a href="#explorar" class="botao-banner">
+                    Explorar histórias
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="banner-decoracao">
+                <i data-lucide="book-open" class="livro-grande"></i>
+                <i data-lucide="music" class="nota-musical"></i>
+            </div>
+
+        </section>
+
+
+        <!-- PESQUISA -->
+        <section class="pesquisa">
+
+            <i data-lucide="search"></i>
+
+            <input type="text" id="campo-pesquisa" placeholder="Pesquise livros, fanfics e autores...">
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categorias" id="explorar">
+
+            <div class="titulo-secao">
+                <div>
+                    <span class="subtitulo">DESCUBRA</span>
+                    <h2>O que você deseja encontrar?</h2>
+                </div>
+            </div>
+
+            <div class="filtros">
+
+                <button class="filtro ativo" data-filtro="ambos">
+                    Ambos
+                </button>
+
+                <button class="filtro" data-filtro="livro">
+                    Livros
+                </button>
+
+                <button class="filtro" data-filtro="fanfic">
+                    Fanfics
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTINUAR LENDO -->
+        <section class="secao">
+
+            <div class="titulo-secao">
+                <div>
+                    <span class="subtitulo">DE ONDE VOCÊ PAROU</span>
+                    <h2>Continue lendo</h2>
+                </div>
+
+                <a href="#explorar" class="link-secao">
+                    Ver biblioteca
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grade-historias">
+
+                <article class="card-historia" data-type="livro">
+
+                    <div class="capa capa-livro">
+                        <span class="tipo">LIVRO</span>
+                        <i data-lucide="book-open"></i>
+                        <h3>Entre páginas</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Entre páginas</h3>
+                        <p>Por: Autora Exemplo</p>
+
+                        <div class="progresso">
+                            <div class="barra">
+                                <span style="width: 65%"></span>
+                            </div>
+                            <small>65% concluído</small>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="card-historia" data-type="fanfic">
+
+                    <div class="capa capa-fanfic">
+                        <span class="tipo">FANFIC</span>
+                        <i data-lucide="heart"></i>
+                        <h3>Nosso destino</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Nosso destino</h3>
+                        <p>Por: Escritora Exemplo</p>
+
+                        <div class="progresso">
+                            <div class="barra">
+                                <span style="width: 30%"></span>
+                            </div>
+                            <small>30% concluído</small>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOMENDAÇÕES -->
+        <section class="secao">
+
+            <div class="titulo-secao">
+                <div>
+                    <span class="subtitulo">ESCOLHIDOS PARA VOCÊ</span>
+                    <h2>Recomendados</h2>
+                </div>
+
+                <a href="#explorar" class="link-secao">
+                    Ver todos
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grade-historias" id="lista-recomendados">
+
+                <article class="card-historia" data-type="livro">
+
+                    <div class="capa capa-romance">
+                        <span class="tipo">LIVRO</span>
+                        <i data-lucide="flower-2"></i>
+                        <h3>Depois da chuva</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Depois da chuva</h3>
+                        <p>Romance · Drama</p>
+                        <div class="avaliacao">
+                            <i data-lucide="star"></i>
+                            4,8
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="card-historia" data-type="fanfic">
+
+                    <div class="capa capa-fantasia">
+                        <span class="tipo">FANFIC</span>
+                        <i data-lucide="sparkles"></i>
+                        <h3>Além do tempo</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Além do tempo</h3>
+                        <p>Fantasia · Aventura</p>
+                        <div class="avaliacao">
+                            <i data-lucide="star"></i>
+                            4,9
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="card-historia" data-type="livro">
+
+                    <div class="capa capa-misterio">
+                        <span class="tipo">LIVRO</span>
+                        <i data-lucide="moon-star"></i>
+                        <h3>Segredos da noite</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Segredos da noite</h3>
+                        <p>Mistério · Suspense</p>
+                        <div class="avaliacao">
+                            <i data-lucide="star"></i>
+                            4,7
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="card-historia" data-type="fanfic">
+
+                    <div class="capa capa-aventura">
+                        <span class="tipo">FANFIC</span>
+                        <i data-lucide="heart-handshake"></i>
+                        <h3>Entre nós</h3>
+                    </div>
+
+                    <div class="informacoes">
+                        <h3>Entre nós</h3>
+                        <p>Romance · Amizade</p>
+                        <div class="avaliacao">
+                            <i data-lucide="star"></i>
+                            4,9
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="mensagem-vazia" class="mensagem-vazia">
+                Nenhuma história encontrada.
+            </p>
+
+        </section>
+
+    </main>
+
+    
+    <!-- BIBLIOTECA DE ÍCONES -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
