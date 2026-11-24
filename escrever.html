@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitTune | Escrever</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="escrever.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+            <a href="index.html" class="nav-link">
+                <i data-lucide="house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                <i data-lucide="compass"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="escrever.html" class="nav-link ativo">
+                <i data-lucide="pen-line"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="music"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="users"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="user-round"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <button type="button" id="botao-tema" class="botao-tema"
+            aria-label="Ativar modo escuro">
+            <i data-lucide="moon"></i>
+        </button>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-escrever">
+
+        <section class="introducao-escrever">
+            <div>
+                <span class="subtitulo-escrever">SEU ESPAÇO CRIATIVO</span>
+                <h1>Minhas histórias</h1>
+                <p>
+                    Suas ideias merecem ganhar vida.
+                    Organize seus projetos e continue escrevendo.
+                </p>
+            </div>
+
+            <button type="button" class="botao-criar" id="botao-criar">
+                <i data-lucide="plus"></i>
+                Criar nova história
+            </button>
+        </section>
+
+
+        <!-- ÁREA DE CRIAÇÃO E EDIÇÃO -->
+        <section class="formulario-container" id="formulario-container">
+
+            <div class="formulario-topo">
+                <div>
+                    <span class="subtitulo-escrever">SEU PROJETO</span>
+                    <h2 id="titulo-formulario">Criar uma história</h2>
+                </div>
+
+                <button type="button" id="botao-fechar"
+                    class="botao-fechar" aria-label="Fechar formulário">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <form id="formulario-historia">
+
+                <div class="campo-formulario">
+                    <label for="titulo-historia">Título da história</label>
+                    <input type="text" id="titulo-historia"
+                        placeholder="Digite o título da sua história" required>
+                </div>
+
+                <div class="linha-formulario">
+
+                    <div class="campo-formulario">
+                        <label for="tipo-historia">Tipo de história</label>
+                        <select id="tipo-historia" required>
+                            <option value="Livro">Livro</option>
+                            <option value="Fanfic">Fanfic</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="genero-historia">Gênero</label>
+                        <select id="genero-historia" required>
+                            <option value="">Selecione um gênero</option>
+                            <option>Romance</option>
+                            <option>Fantasia</option>
+                            <option>Mistério</option>
+                            <option>Terror</option>
+                            <option>Aventura</option>
+                            <option>Drama</option>
+                            <option>Ação</option>
+                            <option>Comédia</option>
+                            <option>Suspense</option>
+                            <option>Ficção científica</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="sinopse-historia">Sinopse</label>
+                    <textarea id="sinopse-historia"
+                        placeholder="Conte um pouco sobre sua história..."
+                        rows="4"></textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="status-historia">Status do projeto</label>
+                    <select id="status-historia">
+                        <option value="Rascunho">Rascunho</option>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Publicada">Publicada</option>
+                    </select>
+                </div>
+
+
+                <!-- ÁREA DE CAPÍTULOS -->
+                <div class="area-capitulos" id="area-capitulos">
+
+                    <div class="topo-area-capitulos">
+                        <div>
+                            <h3>Capítulos da história</h3>
+                            <p>Organize e escreva os capítulos do seu projeto.</p>
+                        </div>
+
+                        <button type="button" id="botao-adicionar-capitulo"
+                            class="botao-adicionar-capitulo">
+                            <i data-lucide="plus"></i>
+                            Adicionar capítulo
+                        </button>
+                    </div>
+
+                    <div id="lista-capitulos-historia"></div>
+
+                    <p id="sem-capitulos-historia">
+                        Você ainda não adicionou capítulos.
+                    </p>
+
+                    <!-- EDITOR DE CAPÍTULO -->
+                    <div class="editor-capitulo" id="editor-capitulo">
+
+                        <h4 id="titulo-editor-capitulo">Novo capítulo</h4>
+
+                        <div class="campo-formulario">
+                            <label for="titulo-capitulo-inline">
+                                Título do capítulo
+                            </label>
+
+                            <input type="text" id="titulo-capitulo-inline"
+                                placeholder="Ex.: Capítulo 1 — O começo">
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="conteudo-capitulo-inline">
+                                Conteúdo do capítulo
+                            </label>
+
+                            <textarea id="conteudo-capitulo-inline"
+                                rows="10"
+                                placeholder="Comece a escrever seu capítulo..."></textarea>
+                        </div>
+
+                        <div class="botoes-formulario">
+                            <button type="button"
+                                id="cancelar-capitulo-inline"
+                                class="botao-cancelar">
+                                Cancelar
+                            </button>
+
+                            <button type="button"
+                                id="salvar-capitulo-inline"
+                                class="botao-salvar">
+                                <i data-lucide="save"></i>
+                                Salvar capítulo
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- BOTÕES DA HISTÓRIA -->
+                <div class="botoes-formulario">
+
+                    <button type="button" id="botao-cancelar"
+                        class="botao-cancelar">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="botao-salvar">
+                        <i data-lucide="save"></i>
+                        Salvar história
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+
+        <!-- LISTA DE HISTÓRIAS -->
+        <section class="secao-minhas-historias">
+
+            <div class="topo-historias">
+                <div>
+                    <h2>Meus projetos</h2>
+                    <p id="quantidade-historias">
+                        Suas histórias em um só lugar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PESQUISA -->
+            <div class="pesquisa-escrever">
+                <i data-lucide="search"></i>
+                <input type="text" id="pesquisa-historias"
+                    placeholder="Pesquisar uma história...">
+            </div>
+
+            <!-- FILTROS -->
+            <div class="filtros-escrever">
+
+                <button type="button" class="filtro-escrever ativo"
+                    data-status="Todas">
+                    Todas
+                </button>
+
+                <button type="button" class="filtro-escrever"
+                    data-status="Em andamento">
+                    Em andamento
+                </button>
+
+                <button type="button" class="filtro-escrever"
+                    data-status="Publicada">
+                    Publicadas
+                </button>
+
+                <button type="button" class="filtro-escrever"
+                    data-status="Rascunho">
+                    Rascunhos
+                </button>
+
+            </div>
+
+            <!-- CARTÕES -->
+            <div class="grade-projetos" id="grade-projetos"></div>
+
+            <!-- QUANDO NÃO HOUVER HISTÓRIAS -->
+            <div class="sem-projetos" id="sem-projetos">
+                <i data-lucide="book-open"></i>
+                <h3>Nenhuma história encontrada</h3>
+                <p>Que tal começar a escrever sua primeira história?</p>
+
+                <button type="button" class="botao-criar-vazio"
+                    id="botao-criar-vazio">
+                    Criar minha história
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="escrever.js"></script>
+
+</body>
+</html>

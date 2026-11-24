@@ -298,3 +298,31 @@
         font-size: 14px;
     }
 }
+
+/* BOTÃO VER TODAS AS HISTÓRIAS */
+
+.container-ver-historias {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0 45px;
+}
+
+.botao-ver-historias {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    background-color: var(--marrom);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-ver-historias:hover {
+    background-color: var(--caramelo);
+    transform: translateY(-3px);
+}

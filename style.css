@@ -1,3 +1,4 @@
+
 /* ================================= */
 /* CONFIGURAÇÕES GERAIS */
 /* ================================= */
@@ -56,10 +57,8 @@ body.modo-escuro {
 .cabecalho {
     background-color: var(--marrom);
     color: var(--branco);
-
     min-height: 85px;
     padding: 20px 5%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,10 +82,8 @@ body.modo-escuro {
     display: flex;
     align-items: center;
     gap: 7px;
-
     color: var(--branco);
     font-size: 14px;
-
     transition: 0.3s;
 }
 
@@ -105,11 +102,9 @@ body.modo-escuro {
     background: transparent;
     color: var(--branco);
     border: none;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 8px;
     border-radius: 50%;
     transition: 0.3s;
@@ -141,15 +136,12 @@ main {
 .banner {
     background-color: var(--verde);
     color: var(--branco);
-
     min-height: 270px;
     border-radius: 18px;
     padding: 45px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     position: relative;
     overflow: hidden;
     margin-bottom: 35px;
@@ -189,15 +181,12 @@ main {
 .botao-banner {
     background-color: var(--caramelo);
     color: var(--branco);
-
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     padding: 13px 20px;
     border-radius: 8px;
     font-weight: bold;
-
     transition: 0.3s;
 }
 
@@ -245,14 +234,11 @@ main {
     display: flex;
     align-items: center;
     gap: 12px;
-
     background-color: var(--cartao);
     border: 1px solid var(--borda);
-
     padding: 0 18px;
     height: 52px;
     border-radius: 10px;
-
     margin-bottom: 45px;
     transition: 0.3s;
 }
@@ -271,11 +257,9 @@ main {
 .pesquisa input {
     width: 100%;
     height: 100%;
-
     background: transparent;
     border: none;
     outline: none;
-
     color: var(--texto);
     font-size: 14px;
 }
@@ -297,7 +281,6 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-
     margin-bottom: 22px;
 }
 
@@ -351,11 +334,9 @@ main {
 .filtro {
     background-color: var(--cartao);
     color: var(--texto);
-
     border: 1px solid var(--borda);
     padding: 11px 25px;
     border-radius: 30px;
-
     font-size: 14px;
     transition: 0.3s;
 }
@@ -393,17 +374,14 @@ main {
 .capa {
     height: 230px;
     border-radius: 12px;
-
     padding: 18px;
     position: relative;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     color: var(--branco);
     box-shadow: 0 5px 15px #00000015;
 }
@@ -425,13 +403,10 @@ main {
     position: absolute;
     top: 12px;
     left: 12px;
-
     background-color: #FFFFFF33;
     color: #FFFFFF;
-
     padding: 6px 9px;
     border-radius: 5px;
-
     font-size: 9px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -539,10 +514,8 @@ main {
 .playlist-destaque {
     background-color: var(--cartao);
     border: 1px solid var(--borda);
-
     border-radius: 15px;
     padding: 25px;
-
     display: flex;
     align-items: center;
     gap: 22px;
@@ -551,11 +524,9 @@ main {
 .playlist-icone {
     background-color: var(--verde);
     color: var(--branco);
-
     width: 75px;
     height: 75px;
     flex-shrink: 0;
-
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -593,15 +564,12 @@ main {
     display: flex;
     align-items: center;
     gap: 9px;
-
     border: none;
     border-radius: 8px;
     padding: 12px 18px;
-
     background-color: var(--caramelo);
     color: var(--branco);
     font-weight: bold;
-
     transition: 0.3s;
 }
 
@@ -621,7 +589,6 @@ main {
 .post-comunidade {
     background-color: var(--cartao);
     border: 1px solid var(--borda);
-
     border-radius: 12px;
     padding: 25px;
 }
@@ -636,11 +603,9 @@ main {
 .avatar {
     width: 45px;
     height: 45px;
-
     border-radius: 50%;
     background-color: var(--verde);
     color: var(--branco);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -680,10 +645,8 @@ main {
     display: flex;
     align-items: center;
     gap: 7px;
-
     background: transparent;
     border: none;
-
     color: var(--texto-secundario);
     font-size: 13px;
     transition: 0.3s;
@@ -705,15 +668,12 @@ main {
 .convite-escrever {
     background-color: var(--marrom);
     color: var(--branco);
-
     border-radius: 15px;
     padding: 35px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
     margin-bottom: 40px;
 }
 
@@ -728,11 +688,6 @@ main {
 }
 
 /* ================================= */
-/* RODAPÉ */
-/* ================================= */
-
-
-/* ================================= */
 /* TABLETS E TELAS MENORES */
 /* ================================= */
 
@@ -743,14 +698,22 @@ main {
     }
 
     .menu {
-        gap: 20px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
     }
 
-    .texto {
+    .nav-link {
+        justify-content: center;
+        padding: 8px;
+    }
+
+    /* Esconde os nomes e mantém somente os ícones */
+    .menu .nav-link span {
         display: none;
     }
 
-    .icone {
+    .nav-link .icone {
         width: 25px;
         height: 25px;
     }
@@ -788,7 +751,11 @@ main {
         gap: 8px;
     }
 
-    .icone {
+    .nav-link {
+        padding: 8px;
+    }
+
+    .nav-link .icone {
         width: 22px;
         height: 22px;
     }
@@ -962,9 +929,16 @@ main {
     line-height: 1.7;
 }
 
+/* ================================= */
+/* ÁREA DO CAPÍTULO */
+/* ================================= */
+
 .capitulo {
     max-width: 750px;
     margin: auto;
+    padding: 35px 55px;
+    border-radius: 12px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .capitulo h2 {
@@ -1033,6 +1007,9 @@ main {
         font-size: 16px;
     }
 
+    .capitulo {
+        padding: 25px 20px;
+    }
 }
 
 /* ================================= */
@@ -1080,14 +1057,11 @@ main {
     align-items: center;
     justify-content: center;
     gap: 9px;
-
     background-color: var(--cartao);
     color: var(--texto);
-
     border: 1px solid var(--borda);
     border-radius: 8px;
     padding: 13px 18px;
-
     font-weight: bold;
     transition: 0.3s;
 }
@@ -1120,5 +1094,208 @@ main {
     .botao-proximo {
         width: 100%;
     }
+}
 
+/* ================================= */
+/* PERSONALIZAÇÃO DA LEITURA */
+/* ================================= */
+
+.personalizacao-leitura {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 24px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    color: var(--texto);
+}
+
+.topo-personalizacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.topo-personalizacao h2 {
+    font-size: 18px;
+    color: var(--texto);
+}
+
+.topo-personalizacao i {
+    color: var(--caramelo);
+}
+
+.controle-leitura {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.controle-leitura label {
+    font-size: 14px;
+    color: var(--texto);
+}
+
+.controle-leitura select {
+    padding: 10px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: var(--fundo);
+    color: var(--texto);
+    cursor: pointer;
+}
+
+.botoes-fonte {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.botoes-fonte button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botoes-fonte button:hover {
+    background-color: var(--caramelo);
+    color: white;
+}
+
+#tamanho-fonte {
+    font-size: 14px;
+    color: var(--texto-secundario);
+    min-width: 38px;
+    text-align: center;
+}
+
+/* Fundos disponíveis para o texto */
+
+.capitulo.fundo-claro {
+    background-color: #FFFFFF;
+    color: #38271F;
+}
+
+.capitulo.fundo-bege {
+    background-color: #F5F1EC;
+    color: #38271F;
+}
+
+.capitulo.fundo-escuro {
+    background-color: #241B17;
+    color: #FFFFFF;
+}
+
+.capitulo.fundo-claro h2,
+.capitulo.fundo-bege h2 {
+    color: #38271F;
+}
+
+.capitulo.fundo-escuro h2 {
+    color: #FFFFFF;
+}
+
+.capitulo.fundo-claro .texto-historia,
+.capitulo.fundo-bege .texto-historia {
+    color: #493B33;
+}
+
+.capitulo.fundo-escuro .texto-historia {
+    color: #F5F1EC;
+}
+
+/* Efeito ao passar o mouse */
+
+.controle-leitura select:focus,
+.botoes-fonte button:focus-visible {
+    outline: 2px solid var(--caramelo);
+    outline-offset: 3px;
+}
+
+/* Responsividade da personalização */
+
+@media (max-width: 600px) {
+
+    .personalizacao-leitura {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .controle-leitura {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .controle-leitura select {
+        width: 100%;
+    }
+
+}
+
+/* ================================= */
+/* PROGRESSO DE LEITURA */
+/* ================================= */
+
+.progresso-leitura {
+    max-width: 750px;
+    margin: 35px auto;
+    padding: 22px 25px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+.topo-progresso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.topo-progresso h2 {
+    font-size: 16px;
+    color: var(--texto);
+}
+
+#porcentagem-progresso {
+    color: var(--caramelo);
+    font-weight: bold;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 9px;
+    background-color: var(--borda);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#barra-progresso-preenchida {
+    width: 0%;
+    height: 100%;
+    background-color: var(--caramelo);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#texto-progresso {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--texto-secundario);
+}
+
+@media (max-width: 600px) {
+    .progresso-leitura {
+        margin: 25px 10px;
+        padding: 18px;
+    }
 }

@@ -182,7 +182,8 @@ todosOsCards.forEach(function (card) {
             tipo: tipo,
             autor: autor,
             descricao: descricao,
-            capa: classeCapa
+            capa: classeCapa,
+            origem: "exemplo"
         });
 
         window.location.href = "leitura.html?" + parametros.toString();

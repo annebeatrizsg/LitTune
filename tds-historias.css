@@ -1,0 +1,405 @@
+/* ================================= */
+/* PÁGINA DO CATÁLOGO */
+/* ================================= */
+
+.pagina-catalogo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 40px 70px;
+}
+
+/* ================================= */
+/* INTRODUÇÃO */
+/* ================================= */
+
+.introducao-catalogo {
+    margin-bottom: 30px;
+}
+
+.subtitulo-catalogo {
+    display: block;
+    color: var(--caramelo);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.introducao-catalogo h1 {
+    color: var(--texto);
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.introducao-catalogo p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ================================= */
+/* PESQUISA */
+/* ================================= */
+
+.pesquisa-catalogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 0 18px;
+    height: 52px;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+.pesquisa-catalogo:focus-within {
+    border-color: var(--caramelo);
+    box-shadow: 0 0 0 3px rgba(185, 130, 80, 0.14);
+}
+
+.pesquisa-catalogo svg {
+    color: var(--texto-secundario);
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.pesquisa-catalogo input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.pesquisa-catalogo input::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* ================================= */
+/* FILTROS DE TIPO */
+/* ================================= */
+
+.filtros-tipo-catalogo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filtro-tipo {
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: 1px solid var(--borda);
+    background-color: var(--cartao);
+    color: var(--texto-secundario);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro-tipo:hover {
+    border-color: var(--caramelo);
+    color: var(--caramelo);
+}
+
+.filtro-tipo.ativo {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border-color: var(--marrom);
+}
+
+/* ================================= */
+/* TÍTULOS DAS SEÇÕES */
+/* ================================= */
+
+.secao-generos-catalogo {
+    margin-bottom: 45px;
+}
+
+.titulo-catalogo {
+    margin-bottom: 20px;
+}
+
+.titulo-catalogo h2 {
+    color: var(--texto);
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.titulo-catalogo p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+/* ================================= */
+/* GÊNEROS */
+/* ================================= */
+
+.grade-generos-catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.genero-catalogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 15px 12px;
+    background-color: var(--cartao);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.genero-catalogo svg {
+    width: 17px;
+    height: 17px;
+    color: var(--caramelo);
+    flex-shrink: 0;
+}
+
+.genero-catalogo:hover {
+    border-color: var(--caramelo);
+    transform: translateY(-3px);
+}
+
+.genero-catalogo.ativo {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border-color: var(--marrom);
+}
+
+.genero-catalogo.ativo svg {
+    color: var(--branco);
+}
+
+/* ================================= */
+/* GRADE DE HISTÓRIAS */
+/* ================================= */
+
+.grade-historias-catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.historia-catalogo {
+    min-width: 0;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.historia-catalogo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(56, 39, 31, 0.12);
+}
+
+/* ================================= */
+/* CAPAS */
+/* ================================= */
+
+.capa-catalogo {
+    min-height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    color: var(--branco);
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.capa-romance {
+    background: linear-gradient(145deg, #B98250, #704638);
+}
+
+.capa-fantasia {
+    background: linear-gradient(145deg, #788064, #384332);
+}
+
+.capa-misterio {
+    background: linear-gradient(145deg, #4B4540, #211C19);
+}
+
+.capa-terror {
+    background: linear-gradient(145deg, #713F3F, #261919);
+}
+
+.capa-aventura {
+    background: linear-gradient(145deg, #A47D49, #51452F);
+}
+
+.capa-drama {
+    background: linear-gradient(145deg, #8B7770, #493A37);
+}
+
+.capa-acao {
+    background: linear-gradient(145deg, #A84F32, #42251E);
+}
+
+.capa-thriller {
+    background: linear-gradient(145deg, #55505B, #211E2A);
+}
+
+.capa-suspense {
+    background: linear-gradient(145deg, #6A756B, #293B34);
+}
+
+.capa-ficcao {
+    background: linear-gradient(145deg, #536C83, #222E45);
+}
+
+.capa-distopia {
+    background: linear-gradient(145deg, #8A5A4B, #392B2A);
+}
+
+.capa-comedia {
+    background: linear-gradient(145deg, #C28B55, #80512F);
+}
+
+.capa-historico {
+    background: linear-gradient(145deg, #92775B, #493B2D);
+}
+
+.capa-mitologia {
+    background: linear-gradient(145deg, #7C7452, #393522);
+}
+
+.capa-poesia {
+    background: linear-gradient(145deg, #9C7D83, #58454C);
+}
+
+/* ================================= */
+/* INFORMAÇÕES DAS HISTÓRIAS */
+/* ================================= */
+
+.info-historia {
+    padding: 16px;
+}
+
+.tipo-historia {
+    display: inline-block;
+    color: var(--caramelo);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.info-historia h3 {
+    color: var(--texto);
+    font-size: 16px;
+    margin: 7px 0 5px;
+}
+
+.info-historia p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.etiqueta-genero {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(120, 128, 100, 0.14);
+    color: var(--verde);
+    font-size: 11px;
+}
+
+/* ================================= */
+/* SEM RESULTADOS */
+/* ================================= */
+
+.sem-resultados {
+    display: none;
+    text-align: center;
+    color: var(--texto-secundario);
+    padding: 35px 10px;
+    font-size: 14px;
+}
+
+/* ================================= */
+/* RESPONSIVIDADE */
+/* ================================= */
+
+@media (max-width: 1050px) {
+    .grade-historias-catalogo {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grade-generos-catalogo {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .pagina-catalogo {
+        padding: 30px 18px 50px;
+    }
+
+    .introducao-catalogo h1 {
+        font-size: 28px;
+    }
+
+    .grade-historias-catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .grade-generos-catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capa-catalogo {
+        min-height: 175px;
+        font-size: 14px;
+    }
+
+    .info-historia {
+        padding: 12px;
+    }
+
+    .info-historia h3 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .grade-generos-catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CORREÇÃO DOS TÍTULOS DAS HISTÓRIAS */
+
+.info-historia h3 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #38271F !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 8px 0 6px;
+    position: relative;
+    z-index: 1;
+}

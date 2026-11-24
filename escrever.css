@@ -1,0 +1,826 @@
+
+/* ================================= */
+/* PÁGINA ESCREVER */
+/* ================================= */
+
+.pagina-escrever {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 45px 40px 70px;
+}
+
+/* ================================= */
+/* INTRODUÇÃO */
+/* ================================= */
+
+.introducao-escrever {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.subtitulo-escrever {
+    display: block;
+    color: var(--caramelo);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.introducao-escrever h1 {
+    color: var(--texto);
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.introducao-escrever p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ================================= */
+/* BOTÃO CRIAR */
+/* ================================= */
+
+.botao-criar,
+.botao-criar-vazio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 20px;
+    background-color: var(--marrom);
+    color: var(--branco);
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-criar:hover,
+.botao-criar-vazio:hover {
+    background-color: var(--caramelo);
+    transform: translateY(-2px);
+}
+
+.botao-criar svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ================================= */
+/* FORMULÁRIO */
+/* ================================= */
+
+.formulario-container {
+    display: none;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 45px;
+    animation: aparecer 0.3s ease;
+}
+
+.formulario-container.aberto {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formulario-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.formulario-topo h2 {
+    color: var(--texto);
+    font-size: 22px;
+}
+
+.botao-fechar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    color: var(--texto-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-fechar:hover {
+    color: var(--marrom);
+    background-color: var(--borda);
+}
+
+/* ================================= */
+/* CAMPOS DO FORMULÁRIO */
+/* ================================= */
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 19px;
+    flex: 1;
+}
+
+.campo-formulario label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--fundo);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: var(--caramelo);
+    box-shadow: 0 0 0 3px rgba(185, 130, 80, 0.12);
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: var(--texto-secundario);
+    opacity: 0.7;
+}
+
+.linha-formulario {
+    display: flex;
+    gap: 18px;
+}
+
+/* ================================= */
+/* BOTÕES DO FORMULÁRIO */
+/* ================================= */
+
+.botoes-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.botao-cancelar,
+.botao-salvar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-cancelar {
+    background: transparent;
+    color: var(--texto-secundario);
+    border: 1px solid var(--borda);
+}
+
+.botao-cancelar:hover {
+    background-color: var(--borda);
+}
+
+.botao-salvar {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border: 1px solid var(--marrom);
+}
+
+.botao-salvar:hover {
+    background-color: var(--caramelo);
+    border-color: var(--caramelo);
+}
+
+.botao-salvar svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ================================= */
+/* ÁREA DE CAPÍTULOS */
+/* ================================= */
+
+.area-capitulos {
+    display: none;
+    margin: 28px 0;
+    padding: 22px;
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+.area-capitulos.aberto {
+    display: block;
+    animation: aparecer 0.3s ease;
+}
+
+.topo-area-capitulos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.topo-area-capitulos h3 {
+    color: var(--texto);
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.topo-area-capitulos p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* BOTÃO ADICIONAR CAPÍTULO */
+
+.botao-adicionar-capitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 13px;
+    background-color: var(--marrom);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-adicionar-capitulo:hover {
+    background-color: var(--caramelo);
+    transform: translateY(-2px);
+}
+
+.botao-adicionar-capitulo svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* LISTA DE CAPÍTULOS */
+
+#lista-capitulos-historia {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sem-capitulos-historia {
+    padding: 20px 10px;
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+/* CARTÃO DE CADA CAPÍTULO */
+
+.capitulo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.capitulo-item:hover {
+    border-color: var(--caramelo);
+}
+
+.capitulo-item h4 {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* BOTÕES DE EDITAR E EXCLUIR CAPÍTULO */
+
+.acoes-capitulo-inline {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.acoes-capitulo-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--texto-secundario);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes-capitulo-inline button:hover {
+    color: var(--caramelo);
+    border-color: var(--caramelo);
+    background-color: rgba(185, 130, 80, 0.08);
+}
+
+.acoes-capitulo-inline svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* ================================= */
+/* EDITOR DE CAPÍTULO */
+/* ================================= */
+
+.editor-capitulo {
+    display: none;
+    margin-top: 22px;
+    padding: 20px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+}
+
+.editor-capitulo.aberto {
+    display: block;
+    animation: aparecer 0.3s ease;
+}
+
+.editor-capitulo h4 {
+    color: var(--texto);
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.editor-capitulo textarea {
+    min-height: 220px;
+    line-height: 1.8;
+}
+
+/* ================================= */
+/* MEUS PROJETOS */
+/* ================================= */
+
+.secao-minhas-historias {
+    margin-top: 20px;
+}
+
+.topo-historias {
+    margin-bottom: 20px;
+}
+
+.topo-historias h2 {
+    color: var(--texto);
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.topo-historias p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+/* ================================= */
+/* PESQUISA */
+/* ================================= */
+
+.pesquisa-escrever {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+.pesquisa-escrever:focus-within {
+    border-color: var(--caramelo);
+    box-shadow: 0 0 0 3px rgba(185, 130, 80, 0.12);
+}
+
+.pesquisa-escrever svg {
+    width: 18px;
+    height: 18px;
+    color: var(--texto-secundario);
+}
+
+.pesquisa-escrever input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: var(--texto);
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.pesquisa-escrever input::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* ================================= */
+/* FILTROS */
+/* ================================= */
+
+.filtros-escrever {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filtro-escrever {
+    padding: 9px 18px;
+    background-color: var(--cartao);
+    color: var(--texto-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro-escrever:hover {
+    border-color: var(--caramelo);
+    color: var(--caramelo);
+}
+
+.filtro-escrever.ativo {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border-color: var(--marrom);
+}
+
+/* ================================= */
+/* CARTÕES DOS PROJETOS */
+/* ================================= */
+
+.grade-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.cartao-projeto {
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.cartao-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(56, 39, 31, 0.10);
+}
+
+/* CAPAS */
+
+.capa-projeto {
+    min-height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+}
+
+.capa-projeto.romance {
+    background: linear-gradient(145deg, #B98250, #704638);
+}
+
+.capa-projeto.fantasia {
+    background: linear-gradient(145deg, #788064, #384332);
+}
+
+.capa-projeto.misterio {
+    background: linear-gradient(145deg, #4B4540, #211C19);
+}
+
+.capa-projeto.terror {
+    background: linear-gradient(145deg, #713F3F, #261919);
+}
+
+.capa-projeto.aventura {
+    background: linear-gradient(145deg, #A47D49, #51452F);
+}
+
+.capa-projeto.drama {
+    background: linear-gradient(145deg, #8B7770, #493A37);
+}
+
+.capa-projeto.acao {
+    background: linear-gradient(145deg, #A84F32, #42251E);
+}
+
+.capa-projeto.comedia {
+    background: linear-gradient(145deg, #C28B55, #80512F);
+}
+
+.capa-projeto.suspense {
+    background: linear-gradient(145deg, #6A756B, #293B34);
+}
+
+.capa-projeto.ficcao {
+    background: linear-gradient(145deg, #536C83, #222E45);
+}
+
+.capa-projeto.outro {
+    background: linear-gradient(145deg, #92775B, #493B2D);
+}
+
+/* INFORMAÇÕES */
+
+.informacoes-projeto {
+    padding: 17px;
+}
+
+.tipo-projeto {
+    color: var(--caramelo);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.informacoes-projeto h3 {
+    color: var(--texto);
+    font-size: 17px;
+    margin: 8px 0 6px;
+    overflow-wrap: anywhere;
+}
+
+.genero-projeto {
+    display: inline-block;
+    color: var(--verde);
+    background-color: rgba(120, 128, 100, 0.14);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+.sinopse-projeto {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    overflow-wrap: anywhere;
+}
+
+.status-projeto {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: rgba(185, 130, 80, 0.14);
+    color: var(--caramelo);
+}
+
+.status-projeto.publicada {
+    background-color: rgba(120, 128, 100, 0.15);
+    color: var(--verde);
+}
+
+.status-projeto.rascunho {
+    background-color: rgba(121, 108, 99, 0.13);
+    color: var(--texto-secundario);
+}
+
+/* AÇÕES DOS PROJETOS */
+
+.acoes-projeto {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 13px;
+    border-top: 1px solid var(--borda);
+}
+
+.botao-editar,
+.botao-excluir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-editar {
+    flex: 1;
+    background-color: var(--marrom);
+    color: #FFFFFF;
+    border: 1px solid var(--marrom);
+}
+
+.botao-editar:hover {
+    background-color: var(--caramelo);
+    border-color: var(--caramelo);
+}
+
+.botao-excluir {
+    background: transparent;
+    color: #A34F45;
+    border: 1px solid var(--borda);
+}
+
+.botao-excluir:hover {
+    background-color: rgba(163, 79, 69, 0.10);
+    border-color: #A34F45;
+}
+
+.acoes-projeto svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ================================= */
+/* SEM PROJETOS */
+/* ================================= */
+
+.sem-projetos {
+    display: none;
+    text-align: center;
+    padding: 55px 20px;
+    background-color: var(--cartao);
+    border: 1px dashed var(--borda);
+    border-radius: 12px;
+}
+
+.sem-projetos svg {
+    width: 38px;
+    height: 38px;
+    color: var(--caramelo);
+    margin-bottom: 15px;
+}
+
+.sem-projetos h3 {
+    color: var(--texto);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.sem-projetos p {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.botao-criar-vazio {
+    margin: 0 auto;
+}
+
+/* ================================= */
+/* RESPONSIVIDADE */
+/* ================================= */
+
+@media (max-width: 950px) {
+    .grade-projetos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .pagina-escrever {
+        padding: 30px 18px 50px;
+    }
+
+    .introducao-escrever {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .introducao-escrever h1 {
+        font-size: 28px;
+    }
+
+    .botao-criar {
+        width: 100%;
+    }
+
+    .linha-formulario {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .formulario-container {
+        padding: 20px;
+    }
+
+    .grade-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .topo-area-capitulos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .botao-adicionar-capitulo {
+        width: 100%;
+    }
+
+    .capitulo-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .acoes-capitulo-inline {
+        width: 100%;
+    }
+
+    .editor-capitulo {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .botoes-formulario {
+        flex-direction: column;
+    }
+
+    .botao-cancelar,
+    .botao-salvar {
+        width: 100%;
+    }
+}
+
+.quantidade-capitulos-cartao {
+    color: var(--texto-secundario);
+    font-size: 11px;
+    margin-top: 12px;
+}

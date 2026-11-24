@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Descobrir histórias | LitTune</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tds-historias.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+            <a href="index.html" class="nav-link">
+                <i data-lucide="house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="nav-link ativo">
+                <i data-lucide="compass"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="square-pen"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="music"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="messages-square"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="user-round"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
+            <i data-lucide="moon"></i>
+        </button>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-catalogo">
+
+        <!-- INTRODUÇÃO -->
+        <section class="introducao-catalogo">
+            <span class="subtitulo-catalogo">SEU PRÓXIMO MUNDO COMEÇA AQUI</span>
+
+            <h1>Descubra novas histórias</h1>
+
+            <p>
+                Explore diferentes gêneros e encontre sua próxima leitura favorita.
+            </p>
+        </section>
+
+        <!-- PESQUISA -->
+        <section class="pesquisa-catalogo">
+            <i data-lucide="search"></i>
+
+            <input type="text" id="pesquisa-catalogo" placeholder="Pesquise por título, autor ou gênero...">
+        </section>
+
+        <!-- FILTROS DE TIPO -->
+        <section class="filtros-tipo-catalogo">
+
+            <button class="filtro-tipo ativo" data-tipo="todos">
+                Todos
+            </button>
+
+            <button class="filtro-tipo" data-tipo="livro">
+                Livros
+            </button>
+
+            <button class="filtro-tipo" data-tipo="fanfic">
+                Fanfics
+            </button>
+
+        </section>
+
+        <!-- GÊNEROS -->
+        <section class="secao-generos-catalogo">
+
+            <div class="titulo-catalogo">
+                <h2>Explore por gênero</h2>
+                <p>Escolha o estilo de história que mais combina com você.</p>
+            </div>
+
+            <div class="grade-generos-catalogo">
+
+                <button class="genero-catalogo ativo" data-genero="todos">
+                    <i data-lucide="book-open"></i>
+                    Todos os gêneros
+                </button>
+
+                <button class="genero-catalogo" data-genero="romance">
+                    <i data-lucide="heart"></i>
+                    Romance
+                </button>
+
+                <button class="genero-catalogo" data-genero="fantasia">
+                    <i data-lucide="wand-sparkles"></i>
+                    Fantasia
+                </button>
+
+                <button class="genero-catalogo" data-genero="misterio">
+                    <i data-lucide="search"></i>
+                    Mistério
+                </button>
+
+                <button class="genero-catalogo" data-genero="terror">
+                    <i data-lucide="ghost"></i>
+                    Terror
+                </button>
+
+                <button class="genero-catalogo" data-genero="aventura">
+                    <i data-lucide="compass"></i>
+                    Aventura
+                </button>
+
+                <button class="genero-catalogo" data-genero="drama">
+                    <i data-lucide="cloud-rain"></i>
+                    Drama
+                </button>
+
+                <button class="genero-catalogo" data-genero="acao">
+                    <i data-lucide="zap"></i>
+                    Ação
+                </button>
+
+                <button class="genero-catalogo" data-genero="thriller">
+                    <i data-lucide="alert-circle"></i>
+                    Thriller
+                </button>
+
+                <button class="genero-catalogo" data-genero="suspense">
+                    <i data-lucide="eye"></i>
+                    Suspense
+                </button>
+
+                <button class="genero-catalogo" data-genero="ficcao-cientifica">
+                    <i data-lucide="rocket"></i>
+                    Ficção científica
+                </button>
+
+                <button class="genero-catalogo" data-genero="distopia">
+                    <i data-lucide="landmark"></i>
+                    Distopia
+                </button>
+
+                <button class="genero-catalogo" data-genero="comedia">
+                    <i data-lucide="laugh"></i>
+                    Comédia
+                </button>
+
+                <button class="genero-catalogo" data-genero="historico">
+                    <i data-lucide="landmark"></i>
+                    Histórico
+                </button>
+
+                <button class="genero-catalogo" data-genero="mitologia">
+                    <i data-lucide="stars"></i>
+                    Mitologia
+                </button>
+
+                <button class="genero-catalogo" data-genero="poesia">
+                    <i data-lucide="feather"></i>
+                    Poesia
+                </button>
+
+            </div>
+        </section>
+
+        <!-- HISTÓRIAS -->
+        <section class="secao-historias-catalogo">
+
+            <div class="titulo-catalogo">
+                <h2 id="titulo-resultados">Histórias para descobrir</h2>
+                <p id="quantidade-resultados">15 histórias disponíveis</p>
+            </div>
+
+            <div class="grade-historias-catalogo" id="grade-historias">
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="romance">
+                    <div class="capa-catalogo capa-romance">
+                        <span>ENTRE PÁGINAS</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · ROMANCE</span>
+                        <h3>Entre Páginas</h3>
+                        <p>Por: Laura Mendes</p>
+                        <span class="etiqueta-genero">Romance</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="fantasia">
+                    <div class="capa-catalogo capa-fantasia">
+                        <span>O REINO ESQUECIDO</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · FANTASIA</span>
+                        <h3>O Reino Esquecido</h3>
+                        <p>Por: Marina Alves</p>
+                        <span class="etiqueta-genero">Fantasia</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="misterio">
+                    <div class="capa-catalogo capa-misterio">
+                        <span>SEGREDOS DA NOITE</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · MISTÉRIO</span>
+                        <h3>Segredos da Noite</h3>
+                        <p>Por: Gabriel Costa</p>
+                        <span class="etiqueta-genero">Mistério</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="terror">
+                    <div class="capa-catalogo capa-terror">
+                        <span>A CASA SOMBRIA</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · TERROR</span>
+                        <h3>A Casa Sombria</h3>
+                        <p>Por: Ana Clara</p>
+                        <span class="etiqueta-genero">Terror</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="aventura">
+                    <div class="capa-catalogo capa-aventura">
+                        <span>ALÉM DO HORIZONTE</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · AVENTURA</span>
+                        <h3>Além do Horizonte</h3>
+                        <p>Por: Pedro Henrique</p>
+                        <span class="etiqueta-genero">Aventura</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="drama">
+                    <div class="capa-catalogo capa-drama">
+                        <span>DIAS DE OUTONO</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · DRAMA</span>
+                        <h3>Dias de Outono</h3>
+                        <p>Por: Sofia Martins</p>
+                        <span class="etiqueta-genero">Drama</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="acao">
+                    <div class="capa-catalogo capa-acao">
+                        <span>ÚLTIMA MISSÃO</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · AÇÃO</span>
+                        <h3>Última Missão</h3>
+                        <p>Por: Lucas Ferreira</p>
+                        <span class="etiqueta-genero">Ação</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="thriller">
+                    <div class="capa-catalogo capa-thriller">
+                        <span>O JOGO</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · THRILLER</span>
+                        <h3>O Jogo</h3>
+                        <p>Por: Beatriz Rocha</p>
+                        <span class="etiqueta-genero">Thriller</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="suspense">
+                    <div class="capa-catalogo capa-suspense">
+                        <span>ATRÁS DA PORTA</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · SUSPENSE</span>
+                        <h3>Atrás da Porta</h3>
+                        <p>Por: Isabela Lima</p>
+                        <span class="etiqueta-genero">Suspense</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="ficcao-cientifica">
+                    <div class="capa-catalogo capa-ficcao">
+                        <span>OUTRA GALÁXIA</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · FICÇÃO CIENTÍFICA</span>
+                        <h3>Outra Galáxia</h3>
+                        <p>Por: Rafael Souza</p>
+                        <span class="etiqueta-genero">Ficção científica</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="distopia">
+                    <div class="capa-catalogo capa-distopia">
+                        <span>O ÚLTIMO DIA</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · DISTOPIA</span>
+                        <h3>O Último Dia</h3>
+                        <p>Por: Camila Nunes</p>
+                        <span class="etiqueta-genero">Distopia</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="comedia">
+                    <div class="capa-catalogo capa-comedia">
+                        <span>CONFUSÕES DO AMOR</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · COMÉDIA</span>
+                        <h3>Confusões do Amor</h3>
+                        <p>Por: Júlia Oliveira</p>
+                        <span class="etiqueta-genero">Comédia</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="historico">
+                    <div class="capa-catalogo capa-historico">
+                        <span>MEMÓRIAS DO TEMPO</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · HISTÓRICO</span>
+                        <h3>Memórias do Tempo</h3>
+                        <p>Por: Helena Duarte</p>
+                        <span class="etiqueta-genero">Histórico</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="fanfic" data-genero="mitologia">
+                    <div class="capa-catalogo capa-mitologia">
+                        <span>FILHOS DOS DEUSES</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">FANFIC · MITOLOGIA</span>
+                        <h3>Filhos dos Deuses</h3>
+                        <p>Por: Manuela Reis</p>
+                        <span class="etiqueta-genero">Mitologia</span>
+                    </div>
+                </article>
+
+                <article class="historia-catalogo" data-tipo="livro" data-genero="poesia">
+                    <div class="capa-catalogo capa-poesia">
+                        <span>VERSOS E SENTIMENTOS</span>
+                    </div>
+                    <div class="info-historia">
+                        <span class="tipo-historia">LIVRO · POESIA</span>
+                        <h3>Versos e Sentimentos</h3>
+                        <p>Por: Alice Campos</p>
+                        <span class="etiqueta-genero">Poesia</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="sem-resultados" id="sem-resultados">
+                Nenhuma história encontrada. Tente outra pesquisa ou categoria.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="tds-historias.js"></script>
+
+</body>
+
+</html>

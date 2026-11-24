@@ -14,17 +14,20 @@
 <body class="pagina-leitura">
 
     <header class="cabecalho">
+
         <a href="index.html" class="logo">LitTune</a>
 
-        <a href="index.html" class="voltar-leitura">
+        <a href="javascript:history.back()" class="voltar-leitura">
             <i data-lucide="arrow-left"></i>
-            Voltar ao início
+            Voltar
         </a>
 
         <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
             <i data-lucide="moon" class="icone-tema"></i>
         </button>
+
     </header>
+
 
     <main class="conteudo-leitura">
 
@@ -48,6 +51,7 @@
 
         </section>
 
+
         <section class="dedicatoria">
 
             <i data-lucide="heart"></i>
@@ -59,15 +63,96 @@
         </section>
 
 
+        <!-- PERSONALIZAÇÃO DA LEITURA -->
+        <section class="personalizacao-leitura">
+
+            <div class="topo-personalizacao">
+                <i data-lucide="sliders-horizontal"></i>
+                <h2>Personalize sua leitura</h2>
+            </div>
+
+            <!-- TAMANHO DA FONTE -->
+            <div class="controle-leitura">
+
+                <label>Tamanho da fonte</label>
+
+                <div class="botoes-fonte">
+
+                    <button type="button" id="diminuir-fonte" aria-label="Diminuir fonte">
+                        A-
+                    </button>
+
+                    <span id="tamanho-fonte">18px</span>
+
+                    <button type="button" id="aumentar-fonte" aria-label="Aumentar fonte">
+                        A+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ESPAÇAMENTO -->
+            <div class="controle-leitura">
+
+                <label for="espacamento-leitura">
+                    Espaçamento entre linhas
+                </label>
+
+                <select id="espacamento-leitura">
+                    <option value="1.5">Pequeno</option>
+                    <option value="1.8">Médio</option>
+                    <option value="2">Grande</option>
+                </select>
+
+            </div>
+
+            <!-- COR DE FUNDO -->
+            <div class="controle-leitura">
+
+                <label for="fundo-leitura">
+                    Cor de fundo
+                </label>
+
+                <select id="fundo-leitura">
+                    <option value="claro">Branco</option>
+                    <option value="bege">Bege</option>
+                    <option value="escuro">Escuro</option>
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- PROGRESSO DE LEITURA -->
+        <section class="progresso-leitura" id="progresso-leitura">
+
+            <div class="topo-progresso">
+                <h2>Seu progresso</h2>
+                <span id="porcentagem-progresso">0%</span>
+            </div>
+
+            <div class="barra-progresso">
+                <div id="barra-progresso-preenchida"></div>
+            </div>
+
+            <p id="texto-progresso">0 de 0 capítulos</p>
+
+        </section>
+
         <article class="capitulo">
 
             <span class="subtitulo">SUA PRÓXIMA LEITURA</span>
 
             <div class="seletor-capitulo">
-                <label for="capitulo-escolhido">Escolher capítulo:</label>
+
+                <label for="capitulo-escolhido">
+                    Escolher capítulo:
+                </label>
 
                 <select id="capitulo-escolhido">
                 </select>
+
             </div>
 
             <h2 id="titulo-capitulo">Capítulo 1</h2>
@@ -90,8 +175,8 @@
 
         </article>
 
-
     </main>
+
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="leitura.js"></script>
