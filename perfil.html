@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitTune | Meu Perfil</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="perfil.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+
+            <a href="index.html" class="nav-link">
+                <i data-lucide="house" class="icone"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                <i data-lucide="compass" class="icone"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="escrever.html" class="nav-link">
+                <i data-lucide="square-pen" class="icone"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="musica.html" class="nav-link">
+                <i data-lucide="music" class="icone"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="comunidade.html" class="nav-link">
+                <i data-lucide="messages-square" class="icone"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="perfil.html" class="nav-link ativo">
+                <i data-lucide="user-round" class="icone"></i>
+                <span>Perfil</span>
+            </a>
+
+        </nav>
+
+        <button id="botao-tema" class="botao-tema"
+            aria-label="Ativar modo escuro">
+            <i data-lucide="moon" class="icone-tema"></i>
+        </button>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-perfil">
+
+        <!-- APRESENTAÇÃO DO PERFIL -->
+        <section class="apresentacao-perfil">
+
+            <div class="avatar-perfil" id="avatar-perfil">
+                <i data-lucide="user-round"></i>
+            </div>
+
+            <div class="informacoes-perfil">
+
+                <span class="etiqueta-perfil">MINHA ESTANTE</span>
+
+                <h1 id="nome-perfil">Meu perfil</h1>
+
+                <p id="bio-perfil">
+                    Compartilhe um pouco sobre você e seu amor por histórias.
+                </p>
+
+                <div class="interesses-perfil" id="interesses-perfil">
+                    <span>Leitura</span>
+                    <span>Escrita</span>
+                    <span>Música</span>
+                </div>
+
+                <button id="editar-perfil" class="botao-editar-perfil">
+                    <i data-lucide="pencil"></i>
+                    Editar perfil
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- RESUMO -->
+        <section class="resumo-perfil">
+
+            <div class="item-resumo">
+                <i data-lucide="book-open"></i>
+                <div>
+                    <strong id="total-leituras">0</strong>
+                    <span>Leituras</span>
+                </div>
+            </div>
+
+            <div class="item-resumo">
+                <i data-lucide="feather"></i>
+                <div>
+                    <strong id="total-historias">0</strong>
+                    <span>Histórias</span>
+                </div>
+            </div>
+
+            <div class="item-resumo">
+                <i data-lucide="heart"></i>
+                <div>
+                    <strong id="total-favoritos">0</strong>
+                    <span>Favoritos</span>
+                </div>
+            </div>
+
+            <div class="item-resumo">
+                <i data-lucide="music"></i>
+                <div>
+                    <strong id="total-playlists">0</strong>
+                    <span>Playlists</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MINHAS LEITURAS -->
+        <section class="secao-perfil">
+
+            <div class="titulo-perfil">
+                <div>
+                    <span>MEUS LIVROS E FANFICS</span>
+                    <h2>Minhas leituras</h2>
+                </div>
+
+                <a href="explorar.html" class="link-perfil">
+                    Explorar histórias
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grade-perfil" id="grade-leituras">
+
+                <div class="mensagem-vazia">
+                    <i data-lucide="book-open"></i>
+                    <p>Suas leituras aparecerão aqui.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MINHAS HISTÓRIAS -->
+        <section class="secao-perfil">
+
+            <div class="titulo-perfil">
+                <div>
+                    <span>SEU LADO CRIATIVO</span>
+                    <h2>Minhas histórias</h2>
+                </div>
+
+                <a href="escrever.html" class="link-perfil">
+                    Escrever história
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grade-perfil" id="grade-minhas-historias">
+
+                <div class="mensagem-vazia">
+                    <i data-lucide="feather"></i>
+                    <p>Suas histórias aparecerão aqui.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAVORITOS -->
+        <section class="secao-perfil">
+
+            <div class="titulo-perfil">
+                <div>
+                    <span>HISTÓRIAS ESPECIAIS</span>
+                    <h2>Meus favoritos</h2>
+                </div>
+
+            </div>
+
+            <div class="grade-perfil" id="grade-favoritos">
+
+                <div class="mensagem-vazia">
+                    <i data-lucide="heart"></i>
+                    <p>Suas histórias favoritas aparecerão aqui.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PLAYLISTS -->
+        <section class="secao-perfil">
+
+            <div class="titulo-perfil">
+                <div>
+                    <span>SUA TRILHA SONORA</span>
+                    <h2>Minhas playlists</h2>
+                </div>
+
+                <a href="musica.html" class="link-perfil">
+                    Ir para músicas
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grade-playlists-perfil" id="grade-playlists-perfil">
+
+                <div class="mensagem-vazia">
+                    <i data-lucide="headphones"></i>
+                    <p>Suas playlists aparecerão aqui.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE EDIÇÃO -->
+    <div class="modal-perfil" id="modal-perfil" hidden>
+
+        <div class="conteudo-modal-perfil">
+
+            <div class="topo-modal-perfil">
+                <h2>Editar meu perfil</h2>
+
+                <button id="fechar-modal-perfil" aria-label="Fechar">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <label for="editar-nome">Nome</label>
+            <input type="text" id="editar-nome" maxlength="40">
+
+            <label for="editar-bio">Sobre você</label>
+            <textarea id="editar-bio" rows="3" maxlength="180"></textarea>
+
+            <label for="editar-interesses">Seus interesses</label>
+            <input
+                type="text"
+                id="editar-interesses"
+                placeholder="Ex.: Fantasia, romance, escrita"
+            >
+
+            <div class="botoes-modal-perfil">
+                <button id="cancelar-edicao">Cancelar</button>
+                <button id="salvar-perfil">Salvar alterações</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="perfil.js"></script>
+
+</body>
+</html>

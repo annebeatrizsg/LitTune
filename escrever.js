@@ -131,14 +131,12 @@ function carregarHistorias() {
         console.error("Erro ao carregar histórias:", erro);
     }
 
-    // Garante que todas as histórias tenham uma lista de capítulos.
     historias.forEach(function (historia) {
 
         if (!Array.isArray(historia.capitulos)) {
             historia.capitulos = [];
         }
 
-        // Garante que capítulos antigos tenham identificadores.
         historia.capitulos.forEach(function (capitulo) {
 
             if (!capitulo.id) {
@@ -287,14 +285,12 @@ formulario.addEventListener("submit", function (evento) {
 
     if (historiaEditando !== null) {
 
-        // Encontrar a história que está sendo editada.
         const historia = historias.find(function (item) {
             return String(item.id) === String(historiaEditando);
         });
 
         if (!historia) return;
 
-        // Atualizar os dados sem apagar os capítulos.
         historia.titulo = titulo;
         historia.tipo = tipo;
         historia.genero = genero;
@@ -303,7 +299,6 @@ formulario.addEventListener("submit", function (evento) {
 
     } else {
 
-        // Criar uma nova história.
         const novaHistoria = {
             id: Date.now(),
             titulo: titulo,
@@ -352,13 +347,13 @@ function mostrarHistorias() {
         return correspondeStatus && correspondePesquisa;
     });
 
-    // Mostrar a quantidade total de histórias.
+    // Quantidade total de histórias
     quantidadeHistorias.textContent =
         historias.length === 1
             ? "Você possui 1 história cadastrada."
             : `Você possui ${historias.length} histórias cadastradas.`;
 
-    // Mostrar mensagem se não houver resultados.
+    // Mensagem quando não houver resultados
     if (historiasFiltradas.length === 0) {
 
         semProjetos.style.display = "block";
@@ -380,6 +375,44 @@ function mostrarHistorias() {
         const quantidadeCapitulos = Array.isArray(historia.capitulos)
             ? historia.capitulos.length
             : 0;
+
+
+        // =================================
+        // RECUPERAR PROGRESSO DE LEITURA
+        // =================================
+
+        const chaveProgresso =
+            "progresso-historia-" + historia.id;
+
+        const progressoSalvo =
+            localStorage.getItem(chaveProgresso);
+
+        let porcentagem = 0;
+        let textoProgresso = "Ainda não começou";
+
+        if (quantidadeCapitulos > 0 && progressoSalvo !== null) {
+
+            const capituloAtual = Number(progressoSalvo);
+
+            if (
+                Number.isInteger(capituloAtual) &&
+                capituloAtual >= 0 &&
+                capituloAtual < quantidadeCapitulos
+            ) {
+
+                porcentagem = Math.round(
+                    ((capituloAtual + 1) / quantidadeCapitulos) * 100
+                );
+
+                textoProgresso =
+                    `Capítulo ${capituloAtual + 1} de ${quantidadeCapitulos} · ${porcentagem}% concluído`;
+            }
+        }
+
+
+        // =================================
+        // CRIAR CARTÃO DA HISTÓRIA
+        // =================================
 
         cartao.innerHTML = `
 
@@ -411,6 +444,18 @@ function mostrarHistorias() {
                     ${quantidadeCapitulos}
                     ${quantidadeCapitulos === 1 ? "capítulo" : "capítulos"}
                 </p>
+
+                ${quantidadeCapitulos > 0 ? `
+                    <div class="progresso-projeto">
+
+                        <div class="barra-progresso-projeto">
+                            <span style="width: ${porcentagem}%"></span>
+                        </div>
+
+                        <small>${textoProgresso}</small>
+
+                    </div>
+                ` : ""}
 
                 <div class="acoes-projeto">
 
@@ -538,12 +583,10 @@ gradeProjetos.addEventListener("click", function (evento) {
         campoSinopse.value = historia.sinopse || "";
         campoStatus.value = historia.status;
 
-        // Mostrar a área de capítulos.
         areaCapitulos.classList.add("aberto");
 
         mostrarCapitulosDaHistoria(historia);
 
-        // Fechar editor de capítulo ao abrir a edição.
         editorCapitulo.classList.remove("aberto");
 
         campoTituloCapitulo.value = "";
@@ -623,7 +666,6 @@ function mostrarCapitulosDaHistoria(historia) {
         historia.capitulos = [];
     }
 
-    // Se não houver capítulos.
     if (historia.capitulos.length === 0) {
 
         semCapitulosHistoria.style.display = "block";

@@ -11,31 +11,37 @@ function atualizarTema() {
 
     document.body.classList.toggle("modo-escuro", modoEscuro);
 
-    if (modoEscuro) {
-        botaoTema.innerHTML =
-            '<i data-lucide="sun" class="icone-tema"></i>';
+    if (botaoTema) {
+        botaoTema.innerHTML = modoEscuro
+            ? '<i data-lucide="sun" class="icone-tema"></i>'
+            : '<i data-lucide="moon" class="icone-tema"></i>';
 
-        botaoTema.setAttribute("aria-label", "Ativar modo claro");
-    } else {
-        botaoTema.innerHTML =
-            '<i data-lucide="moon" class="icone-tema"></i>';
-
-        botaoTema.setAttribute("aria-label", "Ativar modo escuro");
+        botaoTema.setAttribute(
+            "aria-label",
+            modoEscuro ? "Ativar modo claro" : "Ativar modo escuro"
+        );
     }
 
-    lucide.createIcons();
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 }
 
 atualizarTema();
 
-botaoTema.addEventListener("click", function () {
-    const modoEscuro =
-        document.body.classList.contains("modo-escuro");
+if (botaoTema) {
+    botaoTema.addEventListener("click", function () {
+        const modoEscuro =
+            document.body.classList.contains("modo-escuro");
 
-    localStorage.setItem("tema", modoEscuro ? "claro" : "escuro");
+        localStorage.setItem(
+            "tema",
+            modoEscuro ? "claro" : "escuro"
+        );
 
-    atualizarTema();
-});
+        atualizarTema();
+    });
+}
 
 
 /* ================================= */
@@ -70,24 +76,18 @@ function filtrarHistorias() {
     historias.forEach(function (historia) {
 
         const tipo = historia.dataset.type;
-
         const genero = historia.dataset.genero;
-
         const texto = historia.textContent.toLowerCase();
 
-        // Verifica o tipo da história
         const correspondeTipo =
             filtroAtual === "ambos" || tipo === filtroAtual;
 
-        // Verifica o gênero
         const correspondeGenero =
             generoAtual === "todos" || genero === generoAtual;
 
-        // Verifica a pesquisa
         const correspondePesquisa =
             texto.includes(pesquisa);
 
-        // Decide se a história será exibida
         const mostrar =
             correspondeTipo &&
             correspondeGenero &&
@@ -98,10 +98,8 @@ function filtrarHistorias() {
         if (mostrar) {
             historiasEncontradas++;
         }
-
     });
 
-    // Mostra uma mensagem se não encontrar histórias
     mensagemVazia.style.display =
         historiasEncontradas === 0 ? "block" : "none";
 }
@@ -115,21 +113,16 @@ botoesFiltro.forEach(function (botao) {
 
     botao.addEventListener("click", function () {
 
-        // Remove o destaque dos outros botões
         botoesFiltro.forEach(function (item) {
             item.classList.remove("ativo");
         });
 
-        // Destaca o botão selecionado
         botao.classList.add("ativo");
 
-        // Atualiza o filtro
         filtroAtual = botao.dataset.filtro;
 
         filtrarHistorias();
-
     });
-
 });
 
 
@@ -143,7 +136,6 @@ botoesGenero.forEach(function (botao) {
 
         const generoSelecionado = botao.dataset.genero;
 
-        // Se clicar novamente no gênero, remove o filtro
         if (generoAtual === generoSelecionado) {
 
             generoAtual = "todos";
@@ -152,22 +144,17 @@ botoesGenero.forEach(function (botao) {
 
         } else {
 
-            // Remove o destaque dos outros gêneros
             botoesGenero.forEach(function (item) {
                 item.classList.remove("ativo");
             });
 
-            // Seleciona o novo gênero
             generoAtual = generoSelecionado;
 
             botao.classList.add("ativo");
-
         }
 
         filtrarHistorias();
-
     });
-
 });
 
 
@@ -178,6 +165,195 @@ botoesGenero.forEach(function (botao) {
 campoPesquisa.addEventListener("input", function () {
     filtrarHistorias();
 });
+
+
+/* ================================= */
+/* SISTEMA DE FAVORITOS */
+/* ================================= */
+
+const chaveFavoritos = "litTuneFavoritos";
+const chaveDadosFavoritos = "litTuneHistoriasFavoritas";
+
+
+function carregarFavoritos() {
+
+    try {
+        return JSON.parse(
+            localStorage.getItem(chaveFavoritos)
+        ) || [];
+
+    } catch (erro) {
+        return [];
+    }
+}
+
+
+function salvarFavoritos(favoritos) {
+
+    localStorage.setItem(
+        chaveFavoritos,
+        JSON.stringify(favoritos)
+    );
+}
+
+
+function atualizarBotaoFavorito(botao, id) {
+
+    const favoritos = carregarFavoritos();
+
+    const estaFavorito = favoritos.includes(id);
+
+    botao.innerHTML = estaFavorito
+        ? '<i data-lucide="heart" fill="currentColor"></i>'
+        : '<i data-lucide="heart"></i>';
+
+    botao.setAttribute(
+        "aria-label",
+        estaFavorito
+            ? "Remover dos favoritos"
+            : "Adicionar aos favoritos"
+    );
+
+    botao.title = estaFavorito
+        ? "Remover dos favoritos"
+        : "Adicionar aos favoritos";
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+}
+
+
+function criarBotoesFavoritos() {
+
+    historias.forEach(function (card) {
+
+        const capa = card.querySelector(".capa");
+
+        const titulo = card.querySelector("h3").textContent.trim();
+
+        const tipo = card.querySelector(".tipo").textContent.trim();
+
+        const autor = card.querySelector(".info-explorar p")
+            .textContent.replace("Por:", "").trim();
+
+        const genero = card.dataset.genero;
+
+        const id = "explorar-" + [titulo, tipo, autor].join("-");
+
+        if (!capa) {
+            return;
+        }
+
+        // Prepara a capa para receber o botão
+        capa.style.position = "relative";
+
+        // Cria o botão de favorito
+        const botao = document.createElement("button");
+
+        botao.type = "button";
+        botao.className = "botao-favorito-explorar";
+
+        botao.style.cssText = `
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 5;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--borda);
+            border-radius: 50%;
+            background: var(--cartao);
+            color: var(--caramelo);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        `;
+
+        botao.addEventListener("mouseenter", function () {
+            botao.style.transform = "scale(1.1)";
+        });
+
+        botao.addEventListener("mouseleave", function () {
+            botao.style.transform = "scale(1)";
+        });
+
+        // Impede que clicar no coração abra a história
+        botao.addEventListener("click", function (evento) {
+
+            evento.preventDefault();
+            evento.stopPropagation();
+
+            let favoritos = carregarFavoritos();
+
+            if (favoritos.includes(id)) {
+
+                favoritos = favoritos.filter(
+                    item => item !== id
+                );
+
+            } else {
+
+                favoritos.push(id);
+            }
+
+            salvarFavoritos(favoritos);
+
+            // Salva os dados completos da história
+            let dadosSalvos = [];
+
+            try {
+                dadosSalvos = JSON.parse(
+                    localStorage.getItem(chaveDadosFavoritos)
+                ) || [];
+
+            } catch (erro) {
+                dadosSalvos = [];
+            }
+
+            if (favoritos.includes(id)) {
+
+                const dadosHistoria = {
+                    id: id,
+                    titulo: titulo,
+                    tipo: tipo,
+                    autor: autor,
+                    sinopse: "Uma história de " + genero +
+                        " para descobrir.",
+                    genero: genero,
+                    origem: "explorar"
+                };
+
+                const jaExiste = dadosSalvos.some(
+                    historia => historia.id === id
+                );
+
+                if (!jaExiste) {
+                    dadosSalvos.push(dadosHistoria);
+                }
+
+            } else {
+
+                dadosSalvos = dadosSalvos.filter(
+                    historia => historia.id !== id
+                );
+            }
+
+            localStorage.setItem(
+                chaveDadosFavoritos,
+                JSON.stringify(dadosSalvos)
+            );
+
+            atualizarBotaoFavorito(botao, id);
+        });
+
+        capa.appendChild(botao);
+
+        atualizarBotaoFavorito(botao, id);
+    });
+}
 
 
 /* ================================= */
@@ -200,8 +376,8 @@ historias.forEach(function (card) {
             card.querySelector(".tipo").textContent;
 
         const autor =
-            card.querySelector(".info-explorar p").textContent
-                .replace("Por:", "").trim();
+            card.querySelector(".info-explorar p")
+                .textContent.replace("Por:", "").trim();
 
         const genero =
             card.dataset.genero;
@@ -215,35 +391,39 @@ historias.forEach(function (card) {
             titulo: titulo,
             tipo: tipo,
             autor: autor,
-            descricao: "Uma história de " + genero + " para descobrir.",
+            descricao: "Uma história de " + genero +
+                " para descobrir.",
             capa: classeCapa
         });
 
         window.location.href =
             "leitura.html?" + parametros.toString();
-
     }
 
     card.addEventListener("click", abrirHistoria);
 
     card.addEventListener("keydown", function (evento) {
 
+        // Não abre a história quando o foco está no botão de favorito
+        if (evento.target !== card) {
+            return;
+        }
+
         if (evento.key === "Enter" || evento.key === " ") {
 
             evento.preventDefault();
 
             abrirHistoria();
-
         }
-
     });
-
 });
 
 
 /* ================================= */
 /* INICIALIZAÇÃO */
 /* ================================= */
+
+criarBotoesFavoritos();
 
 lucide.createIcons();
 

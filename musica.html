@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitTune | Música</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="musica.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+            <a href="index.html" class="nav-link">
+                <i data-lucide="house" class="icone"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                <i data-lucide="compass" class="icone"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="escrever.html" class="nav-link">
+                <i data-lucide="square-pen" class="icone"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="musica.html" class="nav-link ativo">
+                <i data-lucide="music" class="icone"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="comunidade.html" class="nav-link">
+                <i data-lucide="messages-square" class="icone"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="perfil.html" class="nav-link">
+                <i data-lucide="user-round" class="icone"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <button id="botao-tema" class="botao-tema" aria-label="Ativar modo escuro">
+            <i data-lucide="moon" class="icone-tema"></i>
+        </button>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-musica">
+
+        <section class="introducao-musica">
+            <span class="etiqueta-musica">SEU CANTINHO MUSICAL</span>
+            <h1>Uma trilha sonora para cada momento.</h1>
+            <p>
+                Descubra músicas, crie playlists e encontre a trilha
+                sonora perfeita para acompanhar suas histórias.
+            </p>
+        </section>
+
+        <!-- PLAYLIST EM DESTAQUE -->
+        <section class="destaque-musical">
+            <div class="texto-destaque">
+                <span>PLAYLIST EM DESTAQUE</span>
+                <h2>Entre páginas e melodias</h2>
+                <p>
+                    Uma seleção especial para mergulhar em novas
+                    histórias e deixar a imaginação fluir.
+                </p>
+                <button class="botao-reproduzir">
+                    <i data-lucide="play"></i>
+                    Reproduzir
+                </button>
+            </div>
+
+            <div class="capa-destaque">
+                <i data-lucide="headphones"></i>
+            </div>
+        </section>
+
+        <!-- MINHAS PLAYLISTS -->
+        <section class="secao-playlists">
+            <div class="titulo-secao-musica">
+                <div>
+                    <span>ORGANIZE SUAS MÚSICAS</span>
+                    <h2>Minhas playlists</h2>
+                </div>
+
+                <button class="botao-criar-playlist">
+                    <i data-lucide="plus"></i>
+                    Criar playlist
+                </button>
+            </div>
+
+            <div class="grade-playlists">
+
+                <article class="cartao-playlist">
+                    <div class="capa-playlist capa-romance">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3>Romance</h3>
+                    <p>Músicas para se apaixonar</p>
+                </article>
+
+                <article class="cartao-playlist">
+                    <div class="capa-playlist capa-fantasia">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3>Mundos mágicos</h3>
+                    <p>Para viajar sem sair do lugar</p>
+                </article>
+
+                <article class="cartao-playlist">
+                    <div class="capa-playlist capa-calma">
+                        <i data-lucide="cloud"></i>
+                    </div>
+                    <h3>Momento tranquilo</h3>
+                    <p>Para ler e relaxar</p>
+                </article>
+
+                <article class="cartao-playlist">
+                    <div class="capa-playlist capa-misterio">
+                        <i data-lucide="moon-star"></i>
+                    </div>
+                    <h3>Noites misteriosas</h3>
+                    <p>Uma trilha cheia de suspense</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- TRILHAS SONORAS -->
+        <section class="secao-trilhas">
+            <span>LEITURA E MÚSICA</span>
+            <h2>Trilhas sonoras para suas histórias</h2>
+            <p>
+                Encontre músicas que combinam com os personagens,
+                cenários e sentimentos das suas leituras.
+            </p>
+        </section>
+
+        <!-- PLATAFORMAS EXTERNAS -->
+        <section class="secao-plataformas">
+            <span>SUAS MÚSICAS EM OUTROS LUGARES</span>
+            <h2>Conecte suas plataformas</h2>
+
+            <div class="cartoes-plataformas">
+                <article class="cartao-plataforma">
+                    <i data-lucide="headphones"></i>
+                    <div>
+                        <h3>Spotify</h3>
+                        <p>Acesse suas playlists favoritas.</p>
+                    </div>
+                    <button>Conectar</button>
+                </article>
+
+                <article class="cartao-plataforma">
+                    <i data-lucide="youtube"></i>
+                    <div>
+                        <h3>YouTube</h3>
+                        <p>Encontre músicas e vídeos.</p>
+                    </div>
+                    <button>Conectar</button>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="musica.js"></script>
+
+</body>
+</html>

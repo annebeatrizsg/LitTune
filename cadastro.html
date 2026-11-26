@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LitTune | Criar conta</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cadastro.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <main class="pagina-autenticacao">
+
+        <section class="lado-apresentacao">
+
+            <a href="index.html" class="logo-autenticacao">
+                LitTune<span>.</span>
+            </a>
+
+            <div class="texto-apresentacao">
+                <span class="etiqueta-autenticacao">
+                    UM UNIVERSO DE HISTÓRIAS
+                </span>
+
+                <h1>
+                    Cada história começa com uma página em branco.
+                </h1>
+
+                <p>
+                    Descubra novos mundos, compartilhe suas histórias
+                    e encontre uma comunidade que ama literatura tanto quanto você.
+                </p>
+
+                <div class="frase-destaque">
+                    <i data-lucide="book-open"></i>
+                    <span>Leia. Escreva. Sinta a música.</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lado-formulario">
+
+            <div class="formulario-autenticacao">
+
+                <a href="index.html" class="voltar-inicio">
+                    <i data-lucide="arrow-left"></i>
+                    Voltar ao início
+                </a>
+
+                <div class="cabecalho-formulario">
+                    <span>COMECE SUA JORNADA</span>
+
+                    <h2>Crie sua conta</h2>
+
+                    <p>
+                        Faça parte do universo LitTune!
+                    </p>
+                </div>
+
+                <form id="formulario-cadastro">
+
+                    <div class="campo-autenticacao">
+                        <label for="nome-cadastro">Nome</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="user"></i>
+
+                            <input
+                                type="text"
+                                id="nome-cadastro"
+                                placeholder="Como podemos te chamar?"
+                                required
+                                autocomplete="name"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="email-cadastro">E-mail</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="mail"></i>
+
+                            <input
+                                type="email"
+                                id="email-cadastro"
+                                placeholder="seuemail@exemplo.com"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="senha-cadastro">Senha</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="lock"></i>
+
+                            <input
+                                type="password"
+                                id="senha-cadastro"
+                                placeholder="Crie uma senha"
+                                required
+                                minlength="6"
+                                autocomplete="new-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="mostrar-senha"
+                                data-alvo="senha-cadastro"
+                                aria-label="Mostrar senha"
+                            >
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="campo-autenticacao">
+                        <label for="confirmar-senha">Confirmar senha</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmar-senha"
+                                placeholder="Digite sua senha novamente"
+                                required
+                                minlength="6"
+                                autocomplete="new-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="mostrar-senha"
+                                data-alvo="confirmar-senha"
+                                aria-label="Mostrar senha"
+                            >
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p id="mensagem-cadastro" class="mensagem-autenticacao"></p>
+
+                    <button type="submit" class="botao-autenticacao">
+                        Criar minha conta
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <p class="texto-alternativo">
+                    Já tem uma conta?
+                    <a href="login.html">Entrar</a>
+                </p>
+
+                <p class="termos-autenticacao">
+                    Ao criar sua conta, você poderá explorar o universo LitTune.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="cadastro.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ===== ESTRUTURA DA PÁGINA ===== */
+
+.pagina-autenticacao {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* ===== LADO DE APRESENTAÇÃO ===== */
+
+.lado-apresentacao {
+    width: 45%;
+    min-height: 100vh;
+    padding: 45px 55px;
+    background: linear-gradient(145deg, #38271F, #594031);
+    color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo-autenticacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo-autenticacao i {
+    width: 30px;
+    height: 30px;
+}
+
+.texto-apresentacao {
+    max-width: 450px;
+    margin: auto 0;
+}
+
+.destaque-apresentacao {
+    display: block;
+    color: #D7A675;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.texto-apresentacao h1 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.texto-apresentacao p {
+    color: #E5D9D0;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 390px;
+}
+
+.frase-apresentacao {
+    color: #D7C2B2;
+    font-size: 13px;
+}
+
+
+/* ===== LADO DO FORMULÁRIO ===== */
+
+.lado-formulario {
+    flex: 1;
+    min-height: 100vh;
+    padding: 45px 30px;
+
+    background-color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario-autenticacao {
+    width: 100%;
+    max-width: 420px;
+}
+
+
+/* ===== LINK VOLTAR ===== */
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 55px;
+
+    color: #796C63;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: color 0.2s;
+}
+
+.voltar-inicio:hover {
+    color: #B98250;
+}
+
+.voltar-inicio i {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* ===== CABEÇALHO DO FORMULÁRIO ===== */
+
+.cabecalho-formulario {
+    margin-bottom: 35px;
+}
+
+.cabecalho-formulario h2 {
+    color: #38271F;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cabecalho-formulario p {
+    color: #796C63;
+    font-size: 15px;
+}
+
+
+/* ===== CAMPOS ===== */
+
+.campo-autenticacao {
+    margin-bottom: 23px;
+}
+
+.campo-autenticacao label {
+    display: block;
+    color: #38271F;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.campo-com-icone {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.campo-com-icone > i {
+    position: absolute;
+    left: 15px;
+
+    width: 19px;
+    height: 19px;
+
+    color: #9A8575;
+    pointer-events: none;
+}
+
+.campo-com-icone input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 48px;
+    border: 1px solid #E8DED4;
+    border-radius: 10px;
+
+    background-color: #F9F6F2;
+    color: #38271F;
+
+    font-size: 14px;
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-com-icone input:focus {
+    border-color: #B98250;
+    box-shadow: 0 0 0 3px rgba(185, 130, 80, 0.13);
+}
+
+.campo-com-icone input::placeholder {
+    color: #A99B90;
+}
+
+
+/* ===== BOTÃO MOSTRAR SENHA ===== */
+
+.mostrar-senha {
+    position: absolute;
+    right: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    color: #9A8575;
+
+    cursor: pointer;
+}
+
+.mostrar-senha:hover {
+    color: #B98250;
+}
+
+.mostrar-senha i {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* ===== MENSAGENS ===== */
+
+.mensagem-autenticacao {
+    min-height: 20px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.mensagem-autenticacao.erro {
+    color: #B43B35;
+}
+
+.mensagem-autenticacao.sucesso {
+    color: #557447;
+}
+
+
+/* ===== BOTÃO ENTRAR ===== */
+
+.botao-autenticacao {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #38271F;
+    color: #FFFFFF;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-autenticacao:hover {
+    background-color: #594031;
+    transform: translateY(-2px);
+}
+
+.botao-autenticacao i {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* ===== LINK PARA CADASTRO ===== */
+
+.texto-alternativo {
+    margin-top: 28px;
+    text-align: center;
+
+    color: #796C63;
+    font-size: 14px;
+}
+
+.texto-alternativo a {
+    color: #A66E3E;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texto-alternativo a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 900px) {
+    .lado-apresentacao {
+        width: 40%;
+        padding: 35px;
+    }
+
+    .lado-formulario {
+        padding: 35px 25px;
+    }
+
+    .texto-apresentacao h1 {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .pagina-autenticacao {
+        flex-direction: column;
+    }
+
+    .lado-apresentacao {
+        width: 100%;
+        min-height: 250px;
+        padding: 25px;
+    }
+
+    .texto-apresentacao {
+        margin: 35px 0;
+    }
+
+    .texto-apresentacao h1 {
+        font-size: 29px;
+    }
+
+    .texto-apresentacao p {
+        font-size: 14px;
+    }
+
+    .frase-apresentacao {
+        display: none;
+    }
+
+    .lado-formulario {
+        min-height: auto;
+        padding: 35px 25px 50px;
+    }
+
+    .voltar-inicio {
+        margin-bottom: 35px;
+    }
+}

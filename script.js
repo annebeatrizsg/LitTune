@@ -5,10 +5,8 @@
 
 const botaoTema = document.getElementById("botao-tema");
 
-// Recupera o tema salvo
 const temaSalvo = localStorage.getItem("tema");
 
-// Aplica o tema salvo
 if (temaSalvo === "escuro") {
     document.body.classList.add("modo-escuro");
 
@@ -17,6 +15,7 @@ if (temaSalvo === "escuro") {
 
     botaoTema.setAttribute("aria-label", "Ativar modo claro");
 }
+
 
 // =================================
 // FILTROS DE LIVROS E FANFICS
@@ -144,9 +143,95 @@ botaoTema.addEventListener("click", function () {
 });
 
 
-/* ================================= */
-/* ABRIR LIVROS E FANFICS */
-/* ================================= */
+// =================================
+// PROGRESSO DE LEITURA NA INÍCIO
+// =================================
+
+function atualizarProgressoInicio() {
+
+    const cardsContinuar = document.querySelectorAll(
+        ".secao .card-historia [data-progresso-historia]"
+    );
+
+    cardsContinuar.forEach(function (area) {
+
+        const card = area.closest(".card-historia");
+
+        const titulo = card.querySelector(
+            ".informacoes h3"
+        ).textContent.trim();
+
+        const tipo = card.querySelector(
+            ".tipo"
+        ).textContent.trim();
+
+        const informacao = card.querySelector(
+            ".informacoes p"
+        ).textContent.trim();
+
+        const autor = informacao.startsWith("Por:")
+            ? informacao.replace("Por:", "").trim()
+            : "Autor(a) independente";
+
+        // Mesma chave utilizada na página leitura.js
+        const chaveProgresso = "progresso-exemplo-" +
+            [titulo, tipo, autor].join("-");
+
+        const progressoSalvo =
+            localStorage.getItem(chaveProgresso);
+
+        const barra = area.querySelector(
+            ".barra-progresso-inicio"
+        );
+
+        const texto = area.querySelector(
+            ".texto-progresso-inicio"
+        );
+
+        // Cada história de exemplo possui 3 capítulos
+        const totalCapitulos = 3;
+
+        // Se ainda não começou
+        if (progressoSalvo === null) {
+
+            barra.style.width = "0%";
+            texto.textContent = "Ainda não começou";
+
+            return;
+        }
+
+        const capituloAtual = Number(progressoSalvo);
+
+        // Verifica se o progresso salvo é válido
+        if (
+            !Number.isInteger(capituloAtual) ||
+            capituloAtual < 0 ||
+            capituloAtual >= totalCapitulos
+        ) {
+            barra.style.width = "0%";
+            texto.textContent = "Ainda não começou";
+            return;
+        }
+
+        const porcentagem = Math.round(
+            ((capituloAtual + 1) / totalCapitulos) * 100
+        );
+
+        barra.style.width = porcentagem + "%";
+
+        texto.textContent =
+            "Capítulo " + (capituloAtual + 1) +
+            " de " + totalCapitulos +
+            " · " + porcentagem + "% concluído";
+
+    });
+
+}
+
+
+// =================================
+// ABRIR LIVROS E FANFICS
+// =================================
 
 const todosOsCards = document.querySelectorAll(".card-historia");
 
@@ -158,11 +243,17 @@ todosOsCards.forEach(function (card) {
 
     function abrirHistoria() {
 
-        const titulo = card.querySelector(".informacoes h3").textContent;
+        const titulo = card.querySelector(
+            ".informacoes h3"
+        ).textContent;
 
-        const tipo = card.querySelector(".tipo").textContent;
+        const tipo = card.querySelector(
+            ".tipo"
+        ).textContent;
 
-        const informacao = card.querySelector(".informacoes p").textContent;
+        const informacao = card.querySelector(
+            ".informacoes p"
+        ).textContent;
 
         const capa = card.querySelector(".capa");
 
@@ -186,16 +277,19 @@ todosOsCards.forEach(function (card) {
             origem: "exemplo"
         });
 
-        window.location.href = "leitura.html?" + parametros.toString();
+        window.location.href =
+            "leitura.html?" + parametros.toString();
     }
 
     card.addEventListener("click", abrirHistoria);
 
     card.addEventListener("keydown", function (evento) {
+
         if (evento.key === "Enter" || evento.key === " ") {
             evento.preventDefault();
             abrirHistoria();
         }
+
     });
 
 });
@@ -205,10 +299,10 @@ todosOsCards.forEach(function (card) {
 // INICIALIZAÇÃO
 // =================================
 
-// Ativa os ícones Lucide
 lucide.createIcons();
 
-// Executa os filtros inicialmente
 filtrarHistorias();
+
+atualizarProgressoInicio();
 
 console.log("LitTune carregado com sucesso!");

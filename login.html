@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrar | LitTune</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <main class="pagina-autenticacao">
+
+        <!-- LADO DE APRESENTAÇÃO -->
+        <section class="lado-apresentacao">
+
+            <a href="index.html" class="logo-autenticacao">
+                <i data-lucide="book-open"></i>
+                <span>LitTune</span>
+            </a>
+
+            <div class="texto-apresentacao">
+                <span class="destaque-apresentacao">BEM-VINDO DE VOLTA!</span>
+
+                <h1>Suas histórias favoritas esperam por você.</h1>
+
+                <p>
+                    Continue lendo, descubra novas histórias,
+                    compartilhe suas ideias e aproveite sua música.
+                </p>
+            </div>
+
+            <span class="frase-apresentacao">
+                Leia. Escreva. Sinta a música.
+            </span>
+
+        </section>
+
+
+        <!-- LADO DO FORMULÁRIO -->
+        <section class="lado-formulario">
+
+            <div class="formulario-autenticacao">
+
+                <a href="index.html" class="voltar-inicio">
+                    <i data-lucide="arrow-left"></i>
+                    Voltar ao início
+                </a>
+
+                <div class="cabecalho-formulario">
+                    <span class="destaque-apresentacao">SUA CONTA</span>
+
+                    <h2>Entre na sua conta</h2>
+
+                    <p>
+                        Que bom ter você de volta!
+                    </p>
+                </div>
+
+
+                <form id="formulario-login">
+
+                    <!-- E-MAIL -->
+                    <div class="campo-autenticacao">
+
+                        <label for="email-login">E-mail</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="mail"></i>
+
+                            <input
+                                type="email"
+                                id="email-login"
+                                placeholder="Digite seu e-mail"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <!-- SENHA -->
+                    <div class="campo-autenticacao">
+
+                        <label for="senha-login">Senha</label>
+
+                        <div class="campo-com-icone">
+                            <i data-lucide="lock"></i>
+
+                            <input
+                                type="password"
+                                id="senha-login"
+                                placeholder="Digite sua senha"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="mostrar-senha"
+                                data-alvo="senha-login"
+                                aria-label="Mostrar senha"
+                            >
+                                <i data-lucide="eye"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <!-- MENSAGEM -->
+                    <p
+                        id="mensagem-login"
+                        class="mensagem-autenticacao"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <!-- BOTÃO -->
+                    <button type="submit" class="botao-autenticacao">
+                        Entrar na conta
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                </form>
+
+
+                <p class="texto-alternativo">
+                    Ainda não tem uma conta?
+                    <a href="cadastro.html">Cadastre-se</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="login.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo, #FFFFFF);
+    color: var(--texto, #38271F);
+}
+
+/* ===== PÁGINA DE AUTENTICAÇÃO ===== */
+
+.pagina-autenticacao {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ===== LADO DA APRESENTAÇÃO ===== */
+
+.lado-apresentacao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 55px 10%;
+    background:
+        linear-gradient(145deg, #38271F, #594233);
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.lado-apresentacao::before,
+.lado-apresentacao::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #FFFFFF18;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.lado-apresentacao::before {
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    bottom: -100px;
+}
+
+.lado-apresentacao::after {
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    bottom: -30px;
+}
+
+.logo-autenticacao {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-autenticacao span {
+    color: #B98250;
+}
+
+.texto-apresentacao {
+    max-width: 500px;
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.etiqueta-autenticacao {
+    display: inline-block;
+    color: #D4A779;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.texto-apresentacao h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 4vw, 53px);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.texto-apresentacao p {
+    color: #E5DAD1;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 420px;
+}
+
+.frase-destaque {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 45px;
+    color: #D4A779;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.frase-destaque i {
+    width: 21px;
+}
+
+/* ===== LADO DO FORMULÁRIO ===== */
+
+.lado-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 8%;
+    background-color: var(--fundo, #FFFFFF);
+}
+
+.formulario-autenticacao {
+    width: 100%;
+    max-width: 440px;
+}
+
+/* ===== VOLTAR AO INÍCIO ===== */
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-secundario, #796C63);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 45px;
+    transition: color 0.2s ease;
+}
+
+.voltar-inicio:hover {
+    color: var(--caramelo, #B98250);
+}
+
+.voltar-inicio i {
+    width: 17px;
+}
+
+/* ===== CABEÇALHO DO FORMULÁRIO ===== */
+
+.cabecalho-formulario {
+    margin-bottom: 30px;
+}
+
+.cabecalho-formulario span {
+    color: var(--caramelo, #B98250);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cabecalho-formulario h2 {
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 12px 0;
+    color: var(--texto, #38271F);
+}
+
+.cabecalho-formulario p {
+    color: var(--texto-secundario, #796C63);
+    font-size: 14px;
+}
+
+/* ===== CAMPOS ===== */
+
+#formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.campo-autenticacao {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-autenticacao label {
+    color: var(--texto, #38271F);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo-com-icone {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 49px;
+    padding: 0 14px;
+    border: 1px solid var(--borda, #E8DED4);
+    border-radius: 9px;
+    background-color: var(--cartao, #F5F1EC);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-com-icone:focus-within {
+    border-color: var(--caramelo, #B98250);
+    box-shadow: 0 0 0 3px #B982501A;
+}
+
+.campo-com-icone > i {
+    width: 18px;
+    height: 18px;
+    color: var(--texto-secundario, #796C63);
+    flex-shrink: 0;
+}
+
+.campo-com-icone input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--texto, #38271F);
+    font-size: 13px;
+    padding: 14px 0;
+}
+
+.campo-com-icone input::placeholder {
+    color: var(--texto-secundario, #796C63);
+    opacity: 0.75;
+}
+
+.mostrar-senha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--texto-secundario, #796C63);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mostrar-senha:hover {
+    color: var(--caramelo, #B98250);
+}
+
+.mostrar-senha i {
+    width: 18px;
+    height: 18px;
+}
+
+/* ===== MENSAGENS ===== */
+
+.mensagem-autenticacao {
+    font-size: 12px;
+    line-height: 1.5;
+    min-height: 0;
+}
+
+.mensagem-autenticacao:empty {
+    display: none;
+}
+
+.mensagem-autenticacao.erro {
+    color: #B84C43;
+}
+
+.mensagem-autenticacao.sucesso {
+    color: #788064;
+}
+
+/* ===== BOTÃO DE CADASTRO ===== */
+
+.botao-autenticacao {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 9px;
+    background-color: var(--marrom, #38271F);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-autenticacao:hover {
+    background-color: var(--caramelo, #B98250);
+    transform: translateY(-2px);
+}
+
+.botao-autenticacao i {
+    width: 18px;
+}
+
+/* ===== LINK PARA LOGIN ===== */
+
+.texto-alternativo {
+    text-align: center;
+    color: var(--texto-secundario, #796C63);
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.texto-alternativo a {
+    color: var(--caramelo, #B98250);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texto-alternativo a:hover {
+    text-decoration: underline;
+}
+
+.termos-autenticacao {
+    margin-top: 35px;
+    text-align: center;
+    color: var(--texto-secundario, #796C63);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 900px) {
+    .pagina-autenticacao {
+        grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .lado-apresentacao {
+        padding: 40px 8%;
+    }
+
+    .lado-formulario {
+        padding: 40px 7%;
+    }
+
+    .texto-apresentacao h1 {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 650px) {
+    .pagina-autenticacao {
+        grid-template-columns: 1fr;
+    }
+
+    .lado-apresentacao {
+        min-height: 250px;
+        padding: 25px 7%;
+    }
+
+    .logo-autenticacao {
+        font-size: 27px;
+    }
+
+    .texto-apresentacao {
+        margin: 40px 0 10px;
+    }
+
+    .etiqueta-autenticacao {
+        margin-bottom: 12px;
+    }
+
+    .texto-apresentacao h1 {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .texto-apresentacao p {
+        font-size: 13px;
+    }
+
+    .frase-destaque {
+        margin-top: 20px;
+    }
+
+    .lado-formulario {
+        padding: 35px 7%;
+    }
+
+    .voltar-inicio {
+        margin-bottom: 30px;
+    }
+
+    .cabecalho-formulario h2 {
+        font-size: 30px;
+    }
+}

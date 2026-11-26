@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitTune | Comunidade</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="comunidade.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">LitTune</a>
+
+        <nav class="menu">
+            <a href="index.html" class="nav-link">
+                <i data-lucide="house" class="icone"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                <i data-lucide="compass" class="icone"></i>
+                <span>Explorar</span>
+            </a>
+
+            <a href="escrever.html" class="nav-link">
+                <i data-lucide="square-pen" class="icone"></i>
+                <span>Escrever</span>
+            </a>
+
+            <a href="musica.html" class="nav-link">
+                <i data-lucide="music" class="icone"></i>
+                <span>Música</span>
+            </a>
+
+            <a href="comunidade.html" class="nav-link ativo">
+                <i data-lucide="messages-square" class="icone"></i>
+                <span>Comunidade</span>
+            </a>
+
+            <a href="perfil.html" class="nav-link">
+                <i data-lucide="user-round" class="icone"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <button id="botao-tema" class="botao-tema"
+            aria-label="Ativar modo escuro">
+            <i data-lucide="moon" class="icone-tema"></i>
+        </button>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pagina-comunidade">
+
+        <!-- INTRODUÇÃO -->
+        <section class="introducao-comunidade">
+            <span class="etiqueta-comunidade">NOSSO ESPAÇO DE ENCONTRO</span>
+
+            <h1>Histórias são melhores quando compartilhadas.</h1>
+
+            <p>
+                Converse com outros leitores, compartilhe suas ideias
+                e descubra pessoas que amam as mesmas histórias que você.
+            </p>
+        </section>
+
+        <!-- CRIAR PUBLICAÇÃO -->
+        <section class="criar-publicacao">
+
+            <div class="topo-criar-publicacao">
+                <div class="avatar-comunidade">B</div>
+
+                <div>
+                    <h2>Compartilhe suas ideias</h2>
+                    <p>O que você gostaria de conversar hoje?</p>
+                </div>
+            </div>
+
+            <textarea
+                id="texto-publicacao"
+                placeholder="Escreva algo para a comunidade..."
+                rows="4"
+            ></textarea>
+
+            <div class="rodape-criar-publicacao">
+
+                <select id="categoria-publicacao">
+                    <option value="Geral">Geral</option>
+                    <option value="Livros">Livros</option>
+                    <option value="Fanfics">Fanfics</option>
+                    <option value="Música">Música</option>
+                    <option value="Recomendações">Recomendações</option>
+                </select>
+
+                <button id="botao-publicar">
+                    <i data-lucide="send"></i>
+                    Publicar
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- FILTROS -->
+        <section class="secao-feed">
+
+            <div class="titulo-feed">
+                <div>
+                    <span>FIQUE POR DENTRO</span>
+                    <h2>Comunidade LitTune</h2>
+                </div>
+            </div>
+
+            <div class="filtros-comunidade">
+                <button class="filtro-comunidade ativo" data-categoria="Todos">
+                    Todas
+                </button>
+
+                <button class="filtro-comunidade" data-categoria="Livros">
+                    Livros
+                </button>
+
+                <button class="filtro-comunidade" data-categoria="Fanfics">
+                    Fanfics
+                </button>
+
+                <button class="filtro-comunidade" data-categoria="Música">
+                    Música
+                </button>
+
+                <button class="filtro-comunidade" data-categoria="Recomendações">
+                    Recomendações
+                </button>
+            </div>
+
+            <!-- PUBLICAÇÕES -->
+            <div id="feed-publicacoes">
+
+                <article class="publicacao" data-categoria="Livros">
+
+                    <div class="topo-publicacao">
+                        <div class="avatar-comunidade avatar-um">M</div>
+
+                        <div class="dados-usuario">
+                            <h3>Mariana</h3>
+                            <span>Leitora · Há 2 horas</span>
+                        </div>
+
+                        <span class="categoria-post">Livros</span>
+                    </div>
+
+                    <p class="texto-post">
+                        Alguém mais fica com aquela sensação de vazio
+                        depois de terminar um livro incrível? Parece que
+                        estou me despedindo dos personagens. 😭
+                    </p>
+
+                    <div class="acoes-publicacao">
+                        <button class="botao-curtir">
+                            <i data-lucide="heart"></i>
+                            <span>0</span>
+                        </button>
+
+                        <button class="botao-comentarios">
+                            <i data-lucide="message-circle"></i>
+                            Comentar
+                        </button>
+                    </div>
+
+                    <div class="area-comentarios" hidden>
+                        <div class="lista-comentarios"></div>
+
+                        <div class="campo-comentario">
+                            <input type="text" placeholder="Escreva um comentário...">
+                            <button class="enviar-comentario">
+                                <i data-lucide="send"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="publicacao" data-categoria="Fanfics">
+
+                    <div class="topo-publicacao">
+                        <div class="avatar-comunidade avatar-dois">L</div>
+
+                        <div class="dados-usuario">
+                            <h3>Lucas</h3>
+                            <span>Escritor · Há 4 horas</span>
+                        </div>
+
+                        <span class="categoria-post">Fanfics</span>
+                    </div>
+
+                    <p class="texto-post">
+                        Estou pensando em começar uma fanfic de fantasia,
+                        mas ainda não decidi como será o universo.
+                        Vocês preferem histórias com magia ou criaturas fantásticas?
+                    </p>
+
+                    <div class="acoes-publicacao">
+                        <button class="botao-curtir">
+                            <i data-lucide="heart"></i>
+                            <span>0</span>
+                        </button>
+
+                        <button class="botao-comentarios">
+                            <i data-lucide="message-circle"></i>
+                            Comentar
+                        </button>
+                    </div>
+
+                    <div class="area-comentarios" hidden>
+                        <div class="lista-comentarios"></div>
+
+                        <div class="campo-comentario">
+                            <input type="text" placeholder="Escreva um comentário...">
+                            <button class="enviar-comentario">
+                                <i data-lucide="send"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="publicacao" data-categoria="Música">
+
+                    <div class="topo-publicacao">
+                        <div class="avatar-comunidade avatar-tres">A</div>
+
+                        <div class="dados-usuario">
+                            <h3>Ana</h3>
+                            <span>Leitora · Há 6 horas</span>
+                        </div>
+
+                        <span class="categoria-post">Música</span>
+                    </div>
+
+                    <p class="texto-post">
+                        Vocês também gostam de montar playlists para
+                        acompanhar suas leituras? Eu adoro escolher
+                        músicas que combinam com cada personagem! 🎧
+                    </p>
+
+                    <div class="acoes-publicacao">
+                        <button class="botao-curtir">
+                            <i data-lucide="heart"></i>
+                            <span>0</span>
+                        </button>
+
+                        <button class="botao-comentarios">
+                            <i data-lucide="message-circle"></i>
+                            Comentar
+                        </button>
+                    </div>
+
+                    <div class="area-comentarios" hidden>
+                        <div class="lista-comentarios"></div>
+
+                        <div class="campo-comentario">
+                            <input type="text" placeholder="Escreva um comentário...">
+                            <button class="enviar-comentario">
+                                <i data-lucide="send"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="feed-vazio" hidden>
+                Ainda não há publicações nessa categoria.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="comunidade.js"></script>
+
+</body>
+</html>
