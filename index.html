@@ -308,6 +308,15 @@
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
+    <!--ABRIR DIRETO NO LOGIN -->
+    <script>
+        const usuarioLogado = localStorage.getItem("litTuneUsuarioLogado");
+
+        if (!usuarioLogado) {
+            window.location.replace("login.html");
+        }
+    </script>
+
 </body>
 
 </html>
